@@ -1,0 +1,42 @@
+{
+    "autoscale": {
+        "min_workers": 0,
+        "max_workers": 8
+    },
+    "cluster_name": "1_RStudio",
+    "spark_version": "10.4.x-cpu-ml-scala2.12",
+    "spark_conf": {
+        "spark.databricks.cluster.profile": "serverless",
+        "spark.databricks.repl.allowedLanguages": "sql,python,r",
+        "spark.databricks.delta.preview.enabled": "true"
+    },
+    "azure_attributes": {
+        "first_on_demand": 1,
+        "availability": "ON_DEMAND_AZURE",
+        "spot_bid_max_price": -1
+    },
+    "node_type_id": "Standard_E8_v3",
+    "driver_node_type_id": "Standard_E8_v3",
+    "ssh_public_keys": [],
+    "custom_tags": {
+        "ResourceClass": "Serverless"
+    },
+    "cluster_log_conf": {
+        "dbfs": {
+            "destination": "dbfs:/databricks/scripts/logs/1_RStudio"
+        }
+    },
+    "spark_env_vars": {},
+    "autotermination_minutes": 0,
+    "enable_elastic_disk": true,
+    "cluster_source": "UI",
+    "init_scripts": [
+        {
+            "dbfs": {
+                "destination": "dbfs:/databricks/scripts/init/1_RStudio.sh"
+            }
+        }
+    ],
+    "runtime_engine": "STANDARD",
+    "cluster_id": "0530-124206-ssttv0cm"
+}
