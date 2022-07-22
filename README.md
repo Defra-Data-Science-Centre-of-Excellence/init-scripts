@@ -5,9 +5,9 @@ Short shell scripts for initialising data science Linux environments.
 ## Environments
 | Environment | Install Using | single line |
 | ----------- | ------------- | ----------- |
-| [SCE](SCE.sh) | run in terminal | <code>wget -O- https://raw.githubusercontent.com/aw-west-defra/init-scripts/main/SCE.sh \| bash</code> |
-| [CDAP 1_RStudio](CDAP-1_RStudio.sh) | run in cell, add init script | <code>%sh wget -O /dbfs/databricks/scripts/1_rstudio.sh https://raw.githubusercontent.com/aw-west-defra/init-scripts/main/CDAP-1_RStudio.sh</code> |
-| [CDAP 3_GeoVector](CDAP-3_GeoVector.sh) | run in cell, add init script, add spark config | <code>%sh wget -O /dbfs/databricks/scripts/3_geovector.sh https://raw.githubusercontent.com/aw-west-defra/init-scripts/main/CDAP-3_GeoVector.sh</code> |
+| [SCE](SCE.sh) | run in terminal | <code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh \| bash</code> |
+| [CDAP 1_RStudio](CDAP-1_RStudio.sh) | run in cell, add init script | <code>%sh wget -O /dbfs/databricks/scripts/1_rstudio.sh https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP-1_RStudio.sh</code> |
+| [CDAP 3_GeoVector](CDAP-3_GeoVector.sh) | run in cell, add init script, add spark config | <code>%sh wget -O /dbfs/databricks/scripts/3_geovector.sh https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP-3_GeoVector.sh</code> |
 
 
 ## Libraries
