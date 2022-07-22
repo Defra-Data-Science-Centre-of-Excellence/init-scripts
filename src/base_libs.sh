@@ -12,6 +12,7 @@ sudo apt-get install -y \
 
 # R
 apt-get install -y \
+  r-cran-renv r-cran-rstudioapi \
   r-cran-dt r-cran-shinyjs r-cran-shinydashboard r-cran-shinycssloaders \
   r-cran-sf r-cran-raster r-cran-leaflet \
   r-cran-arrow r-cran-plotly \
