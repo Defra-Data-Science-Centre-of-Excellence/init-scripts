@@ -34,6 +34,8 @@ Short shell scripts for initialising data science Linux environments.
 | ------ | ---- | ------- | ----- |
 | Runtime 10.4 | [R](https://docs.microsoft.com/en-us/azure/databricks/release-notes/runtime/10.4#--installed-r-libraries) |
 | Runtime 10.4 | [py](https://docs.microsoft.com/en-us/azure/databricks/release-notes/runtime/10.4#installed-python-libraries) |
+| Base | ppa | ppa:c2d4u.team/c2d4u4.0+ | R-Cran binary install |
+| Base | ppa | ppa:ubuntugis/ppa | Geospatial |
 | Base | R | renv | RStudio Connect |
 | Base | R | rstudioapi | RStudio Connect |
 | Base | R | packrat | RStudio Connect |
