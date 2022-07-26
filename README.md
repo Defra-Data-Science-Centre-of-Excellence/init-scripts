@@ -24,7 +24,7 @@ Short shell scripts for initialising data science Linux environments.
 | [Jupyter Server](src/jupyter-server.sh) ‡ | ❌ | ❌ | ❌ |
 
 > † [Sedona requires extra spark config](https://sedona.apache.org/setup/databricks/)  
-> ‡ WIP  
+> ‡ WIP - help wanted  
 > *Base Libraries were defined using requests from several users.  Their dependency tree was reduced.  [Here](rsc/Find_Missing_R_Libs.R) is that analysis.*  
 
 <details>
