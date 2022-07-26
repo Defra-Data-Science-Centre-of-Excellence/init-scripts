@@ -7,7 +7,7 @@ Short shell scripts for initialising data science Linux environments.
 | ----------- | ------------- | ----------- |
 | [SCE](SCE.sh) | run in terminal | <code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh \| bash</code> |
 | [CDAP 1_RStudio](CDAP-1_RStudio.sh) | run in cell, add init script | <code>%sh echo 'wget -O- --no-check-certificate https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP-1_RStudio.sh \| bash' > /dbfs/databricks/scripts/1_rstudio.sh</code> |
-| [CDAP 3_GeoVector](CDAP-3_GeoVector.sh) | run in cell, add init script, add spark config | <code>>%sh echo 'wget -O- --no-check-certificate https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP-3_GeoVector.sh \| bash' > /dbfs/databricks/scripts/3_geovector.sh</code> |
+| [CDAP 3_GeoVector](CDAP-3_GeoVector.sh) | run in cell, add init script, add spark config | <code>%sh echo 'wget -O- --no-check-certificate https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP-3_GeoVector.sh \| bash' > /dbfs/databricks/scripts/3_geovector.sh</code> |
 
 
 
