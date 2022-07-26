@@ -1,15 +1,17 @@
 
+URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main
+
 VERSION=$(wget -qO- https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION)
-
+ARCH=$(dpkg --print-architecture)
 wget --no-verbose \
-  "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" \
-  -O ss-latest.deb
+  "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-$ARCH.deb" \
+  -O shiny-server.deb
 
-sudo gdebi -n ss-latest.deb
-rm -f ss-latest.deb
+sudo gdebi -n shiny-server.deb
+rm -f shiny-server.deb
 
 sudo wget \
-  https://raw.githubusercontent.com/Jtsmith275/RStudioShiny-nginx/master/shiny-server.conf \
+  $URL/rsc/shiny-server.conf \
   -O /etc/shiny-server/shiny-server.conf
 
 sudo sed -i "s/run_as shiny/run_as $USER/" /etc/shiny-server/shiny-server.conf
