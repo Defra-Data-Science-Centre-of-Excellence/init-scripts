@@ -57,6 +57,7 @@ Short shell scripts for initialising data science Linux environments.
 | Base | R | rpostgres | Farm Stats |
 | Base | R | srvyr | Farm Stats |
 | Base | R | zoo | Farm Stats |
+| Base | bin | RETICULATE_PYTHON | Python path for RStudio |
 | Base | py | pandas |
 | Base | py | matplotlib |
 | Base | py | openpyxl |
