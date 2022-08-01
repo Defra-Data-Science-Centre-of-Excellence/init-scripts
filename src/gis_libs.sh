@@ -4,8 +4,7 @@
 ### spark.serializer org.apache.spark.serializer.KryoSerializer
 ### spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator
 DIR="/dbfs/databricks/jars"
-if [ ! -d $DIR ]
-then
+if [ ! -d $DIR ]; then
   mkdir -p $DIR
   curl -o $DIR/geotools-wrapper-1.1.0-25.2.jar "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.1.0-25.2/geotools-wrapper-1.1.0-25.2.jar"
   curl -o $DIR/sedona-python-adapter-3.0_2.12-1.1.1-incubating.jar "https://repo1.maven.org/maven2/org/apache/sedona/sedona-python-adapter-3.0_2.12/1.1.1-incubating/sedona-python-adapter-3.0_2.12-1.1.1-incubating.jar"
