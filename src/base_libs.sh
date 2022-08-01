@@ -19,7 +19,7 @@ apt-get install -y \
   r-cran-packrat r-cran-rsconnect \
   r-cran-biocmanager r-cran-bs4dash r-cran-janitor r-cran-odbc r-cran-rgdal r-cran-rpostgres r-cran-srvyr r-cran-zoo
 if [[ "$(which python)" == *"databricks"* ]]; then
-  export RETICULATE_PYTHON=$(which python)
+  export RETICULATE_PYTHON="$(which python)"
 fi
 
 # Python
