@@ -17,7 +17,7 @@ apt-get install -y \
   r-cran-sf r-cran-raster r-cran-leaflet \
   r-cran-arrow r-cran-plotly \
   r-cran-packrat r-cran-rsconnect \
-  r-cran-biocmanager r-cran-bs4dash r-cran-janitor r-cran-odbc r-cran-rgdal r-cran-rpostgres r-cran-srvyr r-cran-zoo
+  r-cran-biocmanager r-cran-janitor r-cran-odbc r-cran-rgdal r-cran-rpostgres r-cran-srvyr r-cran-zoo
 
 # Python
 pip install \
