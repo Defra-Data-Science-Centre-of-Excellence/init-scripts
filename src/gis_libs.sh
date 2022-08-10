@@ -28,4 +28,5 @@ sudo apt-get install -y \
   libproj-dev \
   libspatialindex-dev
 pip install \
+  pyorgio \
   pyspark-vector-files
