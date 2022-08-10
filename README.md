@@ -12,7 +12,7 @@ Short shell scripts for initialising data science Linux environments.
   <tbody><tr>
     <td><a href="SCE.sh">SCE</a></td>
     <td>run in terminal</td>
-    <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh \| bash</code></td>
+    <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh | bash</code></td>
   </tr><tr>
     <td><a href="CDAP-1_RStudio.sh">CDAP 1_RStudio</a></td>
     <td>run in cell, add init script, add environmental variables</td>
