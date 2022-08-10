@@ -27,8 +27,9 @@ pip install \
 # Quarto
 ## https://docs.rstudio.com/resources/install-quarto/
 FILE=quarto-linux-amd64.deb
-sudo curl -LO https://quarto.org/download/latest/$FILE
+wget -O $FILE https://quarto.org/download/latest/$FILE
 sudo apt-get install -y \
   gdebi-core
-sudo gdebi $FILE
+sudo gdebi -n $FILE
 rm $FILE
+/usr/local/bin/quarto check
