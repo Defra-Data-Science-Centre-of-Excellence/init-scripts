@@ -3,11 +3,26 @@ Short shell scripts for initialising data science Linux environments.
 
 
 ## Environments
-| Environment | Install Using | single line |
-| ----------- | ------------- | ----------- |
-| [SCE](SCE.sh) | run in terminal | <code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh \| bash</code> |
-| [CDAP 1_RStudio](CDAP-1_RStudio.sh) | run in cell, add init script | <code>%sh echo 'wget -O- --no-check-certificate https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP-1_RStudio.sh \| bash' > /dbfs/databricks/scripts/1_rstudio.sh</code> |
-| [CDAP 3_GeoVector](CDAP-3_GeoVector.sh) | run in cell, add init script, add spark config | <code>%sh echo 'wget -O- --no-check-certificate https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP-3_GeoVector.sh \| bash' > /dbfs/databricks/scripts/3_geovector.sh</code> |
+<table>
+  <thead><tr>
+    <th>Environment</th>
+    <th>Install Guide</th>
+    <th></th>
+  </tr></thead>
+  <tbody><tr>
+    <td><a href="SCE.sh">SCE</a></td>
+    <td>run in terminal</td>
+    <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh \| bash</code></td>
+  </tr><tr>
+    <td><a href="CDAP-1_RStudio.sh">CDAP 1_RStudio</a></td>
+    <td>run in cell, add init script, add environmental variables</td>
+    <td rowspan="2"><code>%sh wget -O- --no-check-certificate https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP.sh | bash</code></td>
+  </tr><tr>
+    <td><a href="CDAP-3_GeoVector.sh">CDAP 3_GeoVector</a></td>
+    <td>run in cell, add init script, add spark config</td>
+  </tr></tbody>
+</table>
+
 
 
 
@@ -37,6 +52,7 @@ Short shell scripts for initialising data science Linux environments.
 | Base | ppa | ppa:c2d4u.team/c2d4u4.0+ | R-Cran binary install |
 | Base | ppa | ppa:ubuntugis/ppa | Geospatial |
 | Base | R | renv | RStudio Connect |
+| Base | R | devtools | RStudio Connect |
 | Base | R | rstudioapi | RStudio Connect |
 | Base | R | packrat | RStudio Connect |
 | Base | R | rsconnect | RStudio Connect |
@@ -57,7 +73,6 @@ Short shell scripts for initialising data science Linux environments.
 | Base | R | rpostgres | Farm Stats |
 | Base | R | srvyr | Farm Stats |
 | Base | R | zoo | Farm Stats |
-| Base | bin | RETICULATE_PYTHON | Python path for RStudio |
 | Base | py | pandas |
 | Base | py | matplotlib |
 | Base | py | openpyxl |
@@ -67,6 +82,7 @@ Short shell scripts for initialising data science Linux environments.
 | Base | py | pyproj | Geospatial |
 | Base | py | geopandas | Geospatial |
 | Base | py | geocube | Geospatial |
+| Base | bin | Quarto | Shiny |
 | Geo | jar | geotools-wrapper | Sedona |
 | Geo | jar | sedona-python-adapter | Sedona |
 | Geo | jar | sedona-viz | Sedona |
@@ -78,6 +94,7 @@ Short shell scripts for initialising data science Linux environments.
 | Geo | bin | libgeos-dev | pyspark-vector-files |
 | Geo | bin | libproj-dev | pyspark-vector-files |
 | Geo | bin | libspatialindex-dev | pyspark-vector-files |
+| Geo | py | pyorgio | pyspark-vector-files |
 | Geo | py | pyspark-vector-files | pyspark-vector-files |
 
 </details>
