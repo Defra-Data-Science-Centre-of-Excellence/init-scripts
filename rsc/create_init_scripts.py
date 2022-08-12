@@ -1,5 +1,7 @@
 %py
 # Create Init Scripts
+
+
 filename = 'dbfs:/databricks/scripts/1_rstudio.sh'
 script = '''#!/bin/bash
 sudo rm -rf /var/lib/apt/lists/*
@@ -36,8 +38,9 @@ pip install \
 # Reticulate
 echo RETICULATE_PYTHON=$(which python3) >> /etc/environment
 '''
-
 dbutils.fs.put(filename, script, overwrite=True)
+
+
 filename = 'dbfs:/databricks/scripts/3_geovector.sh'
 script = '''#!/bin/bash
 # Sedona
@@ -74,6 +77,7 @@ pip install \
   pyspark-vector-files
 '''
 dbutils.fs.put(filename, script, overwrite=True)
+
 
 print('''TODO:
 - Logging:
