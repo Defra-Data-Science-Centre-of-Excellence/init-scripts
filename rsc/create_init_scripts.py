@@ -1,9 +1,15 @@
 %py
-# Create Init Scripts
+TEST_MODE = False
+FOLDER = 'dbfs:/databricks/scripts/'
 
 
-filename = 'dbfs:/databricks/scripts/1_rstudio.sh'
-script = '''#!/bin/bash
+
+file_func = lambda filename:  FOLDER+filename if TEST_MODE else FOLDER+filename.replace('.sh', '_test.sh')
+
+
+
+filename = '1_rstudio.sh'
+script = r'''#!/bin/bash
 sudo rm -rf /var/lib/apt/lists/*
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
@@ -34,15 +40,13 @@ apt-get install -y \
 pip install \
   pandas matplotlib openpyxl \
   spatialite rtree pyproj geopandas geocube
-  
-# Reticulate
-echo RETICULATE_PYTHON=$(which python3) >> /etc/environment
 '''
-dbutils.fs.put(filename, script, overwrite=True)
+dbutils.fs.put(file_func(filename), script, overwrite=True)
 
 
-filename = 'dbfs:/databricks/scripts/3_geovector.sh'
-script = '''#!/bin/bash
+
+filename = '3_geovector.sh'
+script = r'''#!/bin/bash
 # Sedona
 ## requires spark config:
 ### spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
@@ -76,7 +80,8 @@ pip install \
   pyorgio \
   pyspark-vector-files
 '''
-dbutils.fs.put(filename, script, overwrite=True)
+dbutils.fs.put(file_func(filename), script, overwrite=True)
+
 
 
 print('''TODO:
