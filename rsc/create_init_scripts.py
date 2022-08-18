@@ -77,7 +77,7 @@ sudo apt-get install -y \
   libproj-dev \
   libspatialindex-dev
 pip install \
-  pyorgio \
+  pyogrio \
   pyspark-vector-files
 '''
 dbutils.fs.put(file_func(filename), script, overwrite=True)
