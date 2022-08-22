@@ -4,7 +4,7 @@ FOLDER = 'dbfs:/databricks/scripts/'
 
 
 
-file_func = lambda filename:  FOLDER+filename if TEST_MODE else FOLDER+filename.replace('.sh', '_test.sh')
+file_func = lambda filename:  FOLDER+filename if not TEST_MODE else FOLDER+filename.replace('.sh', '_test.sh')
 
 
 
@@ -49,9 +49,9 @@ filename = '3_geovector.sh'
 script = r'''#!/bin/bash
 # Sedona
 ## requires spark config:
-### spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
-### spark.serializer org.apache.spark.serializer.KryoSerializer
 ### spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator
+### spark.serializer org.apache.spark.serializer.KryoSerializer
+### spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
 DIR="/dbfs/databricks/jars"
 if [ ! -d $DIR ]; then
   mkdir -p $DIR
@@ -95,7 +95,7 @@ dbfs:/databricks/logs/4_training
 dbfs:/databricks/scripts/1_rstudio.sh
 dbfs:/databricks/scripts/3_geovector.sh
 - 3_GeoVector Append to Spark config:
-spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
-spark.serializer org.apache.spark.serializer.KryoSerializer
 spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator
+spark.serializer org.apache.spark.serializer.KryoSerializer
+spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
 ''')
