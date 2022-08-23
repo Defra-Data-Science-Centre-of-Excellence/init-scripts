@@ -32,7 +32,7 @@ rm jupyterhub_config.py
 sudo sed -i "s|# c.Spawner.default_url = ''|c.Spawner.default_url = '/lab'|" /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
 sudo sed -i "s|# c.JupyterHub.bind_url = 'http://:8000'|c.JupyterHub.bind_url = 'http://:8000/jupyter'|" /opt/jupyterhub/etc/jupyterhub/jupyterhub_config.py
 
-sudo wget $JUPYTER_SERVICE -O /etc/systemd/system/jupyter-server.service
+echo $JUPYTER_SERVICE > /etc/systemd/system/jupyter-server.service
 
 
 sudo systemctl daemon-reload
