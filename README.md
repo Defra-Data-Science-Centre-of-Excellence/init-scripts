@@ -82,7 +82,6 @@ Short shell scripts for initialising data science Linux environments.
 | Base | py | pyproj | Geospatial |
 | Base | py | geopandas | Geospatial |
 | Base | py | geocube | Geospatial |
-| Base | bin | Quarto | Shiny |
 | Geo | jar | geotools-wrapper | Sedona |
 | Geo | jar | sedona-python-adapter | Sedona |
 | Geo | jar | sedona-viz | Sedona |
@@ -94,7 +93,7 @@ Short shell scripts for initialising data science Linux environments.
 | Geo | bin | libgeos-dev | pyspark-vector-files |
 | Geo | bin | libproj-dev | pyspark-vector-files |
 | Geo | bin | libspatialindex-dev | pyspark-vector-files |
-| Geo | py | pyorgio | pyspark-vector-files |
+| Geo | py | pyogrio | pyspark-vector-files |
 | Geo | py | pyspark-vector-files | pyspark-vector-files |
 
 </details>
