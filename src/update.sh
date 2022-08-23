@@ -3,4 +3,5 @@ sudo apt-get update -y
 sudo apt-get full-upgrade -y
 sudo apt-get autoremove -y
 sudo apt-get autopurge -y
-pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
+pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U 
+
