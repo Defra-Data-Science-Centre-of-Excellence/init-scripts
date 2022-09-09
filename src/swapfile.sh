@@ -1,3 +1,5 @@
+# Allow extra memory via a swapfile
+# https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04
 SIZE=16G
 FILE=/swapfile
 sudo fallocate -l $SIZE $FILE
