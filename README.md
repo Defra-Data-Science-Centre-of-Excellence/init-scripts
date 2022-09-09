@@ -23,7 +23,7 @@ Short shell scripts for initialising data science Linux environments.
   </tr></tbody>
   <tbody><tr>
     <td><a href="src/swapfile.sh">SwapFile</a></td>
-    <td>add swap for extra memory</td>
+    <td>run in terminal</td>
     <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src/swapfile.sh | bash</code></td>
   </tr>
 </table>
