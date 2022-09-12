@@ -11,7 +11,7 @@ wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/
 wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-viz-3.0_2.12/$VERSION-incubating/sedona-viz-3.0_2.12-$VERSION-incubating.jar"
 cp $DIR/*.jar /databricks/jars
 pip install \
-  apache-sedona
+  apache-sedona==$VERSION
 
 # Mosaic
 pip install \
