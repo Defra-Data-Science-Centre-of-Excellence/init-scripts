@@ -38,7 +38,8 @@ apt-get install -y \
 
 # Python
 pip install \
-  pandas matplotlib openpyxl \
+  pandas openpyxl \
+  folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube
 '''
 dbutils.fs.put(file_func(filename), script, overwrite=True)
