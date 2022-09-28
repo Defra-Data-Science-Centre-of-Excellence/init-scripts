@@ -20,5 +20,6 @@ apt-get install -y \
 
 # Python
 pip install \
-  pandas matplotlib openpyxl \
+  pandas openpyxl \
+  folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube
