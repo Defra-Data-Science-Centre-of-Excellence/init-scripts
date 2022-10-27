@@ -94,6 +94,8 @@ dbfs:/databricks/logs/4_training
 - Init Scripts:
 dbfs:/databricks/scripts/1_rstudio.sh
 dbfs:/databricks/scripts/3_geovector.sh
+- Environment Variables for all clusters:
+LD_LIBRARY_PATH=/usr/libs
 - 3_GeoVector Append to Spark config:
 spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator
 spark.serializer org.apache.spark.serializer.KryoSerializer
