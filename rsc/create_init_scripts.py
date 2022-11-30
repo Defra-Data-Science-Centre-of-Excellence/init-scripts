@@ -26,7 +26,9 @@ pip install -U pip
 
 # C
 sudo apt-get install -y \
-  libsqlite3-mod-spatialite
+  libsqlite3-mod-spatialite \
+  gdal-bin libgdal-dev libudunits2-dev \
+  libcairo2-dev
 
 # R
 apt-get install -y \
