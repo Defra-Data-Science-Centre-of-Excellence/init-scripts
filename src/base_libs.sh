@@ -6,7 +6,7 @@ sudo add-apt-repository ppa:ubuntugis/ppa
 sudo apt-get update
 pip install -U pip
 
-# C
+# bin
 sudo apt-get install -y \
   libsqlite3-mod-spatialite \
   gdal-bin libgdal-dev \
