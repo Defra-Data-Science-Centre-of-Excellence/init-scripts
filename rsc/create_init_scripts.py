@@ -57,8 +57,8 @@ DIR=/dbfs/databricks/jars
 mkdir -p $DIR
 VERSION="1.3.1"
 wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.3.0-27.2/geotools-wrapper-1.3.0-27.2.jar"
-wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-python-adapter-3.0_2.13/$VERSION-incubating/sedona-python-adapter-3.0_2.13-$VERSION-incubating.jar"
-wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-viz-3.0_2.13/$VERSION-incubating/sedona-viz-3.0_2.13-$VERSION-incubating.jar"
+wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-python-adapter-3.0_2.12/$VERSION-incubating/sedona-python-adapter-3.0_2.12-$VERSION-incubating.jar"
+wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-viz-3.0_2.12/$VERSION-incubating/sedona-viz-3.0_2.12-$VERSION-incubating.jar"
 cp $DIR/*.jar /databricks/jars
 pip install \
   apache-sedona==$VERSION
