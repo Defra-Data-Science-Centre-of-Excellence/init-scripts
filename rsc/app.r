@@ -7,15 +7,20 @@ if (require('DT')) {
 }
 
 
-data = {
-  rdata = as.data.frame(installed.packages())
-  cdata = read.csv(text=system("echo 'Package,Version,Section,Homepage,Source'; dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\\n' | sort -n", T,F,T))
-  
-  list(
-    'r_libs' = rdata,
-    'bin_libs' = cdata
-  )
-}
+data = {list(
+    'r_libs' = {
+      as.data.frame(installed.packages())
+    },
+    'apt_libs' = {
+      apt = system('apt list', T,F,T)
+      apt = apt[2:length(apt)]
+      as.data.frame(apt)
+    },
+    'dpkg_libs' = {
+      read.csv(text=system("echo 'Package,Version,Section,Homepage,Source'; dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\\n' | sort -n", T,F,T))
+    }
+)}
+
 
 
 ui = fluidPage(
