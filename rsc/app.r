@@ -8,11 +8,8 @@ if (require('DT')) {
 
 
 data = {
-  cdata = system('apt list --installed', T,F,T)
-  cdata = cdata[2:length(cdata)]
-  cdata = as.data.frame(cdata)
-
   rdata = as.data.frame(installed.packages())
+  cdata = read.csv(text=system("echo 'Package,Version,Section,Homepage,Source'; dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\\n' | sort -n", T,F,T))
   
   list(
     'r_libs' = rdata,
