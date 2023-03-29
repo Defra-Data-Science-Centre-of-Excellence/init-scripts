@@ -12,7 +12,7 @@ data = {list(
       as.data.frame(installed.packages())
     },
     'apt_libs' = {
-      apt = system('apt list', T,F,T)
+      apt = system('apt list --installed', T,F,T)
       apt = apt[2:length(apt)]
       as.data.frame(apt)
     },
