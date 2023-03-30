@@ -11,7 +11,10 @@ data = {list(
     'apt_libs' = {
       apt = system('apt list', T,F,T)
       apt = apt[2:length(apt)]
-      as.data.frame(apt)
+      apt = paste0(apt, collapse='\n\r')
+      apt = str_replace_all(str_replace_all(apt, '/', '\t'), ' ', '\t')
+      apt = paste0('Package\tUbuntu\tVersion\tArchitecture\n', apt)
+      read.table(text=apt, header=TRUE, fill=TRUE)
     },
     'dpkg_libs' = {
       # Architecture,Bugs,Conffiles,Config-Version,Conflicts,Breaks,Depends,Description,Enhances,Protected,Essential,Filename,Homepage,Installed-Size,MD5sum,MSDOS-Filename,Maintainer,Origin,Package,Pre-Depends,Priority,Provides,Recommends,Replaces,Revision,Section,Size,Source,Status,Suggests,Tag,Triggers-Awaited,Triggers-Pending,Version
