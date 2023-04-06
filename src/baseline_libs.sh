@@ -40,4 +40,5 @@ python -m pip install \
   pandas openpyxl \
   folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube \
-  numpy scipy scikit-learn
+  numpy scipy scikit-learn \
+  dash dash_core_components dash_html_components
