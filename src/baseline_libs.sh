@@ -41,4 +41,4 @@ python -m pip install \
   folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube \
   numpy scipy scikit-learn \
-  dash dash_core_components dash_html_components
+  dash dash_core_components dash_html_components json flask
