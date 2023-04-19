@@ -25,7 +25,8 @@ sudo apt-get install -y \
   libfribidi-dev \
   libharfbuzz-dev \
   libfontconfig1-dev \
-  libcairo2-dev
+  libcairo2-dev \
+  cmake
 
 # R
 apt-get install -y \
@@ -41,4 +42,4 @@ python -m pip install \
   folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube \
   numpy scipy scikit-learn \
-  dash dash_core_components dash_html_components json flask
+  dash flask
