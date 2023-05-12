@@ -42,4 +42,5 @@ python -m pip install \
   folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube \
   numpy scipy scikit-learn \
-  dash flask
+  dash flask \
+  black tokenize-rt
