@@ -38,20 +38,20 @@ apt-get install -y \
 
 # Python
 python -m pip install \
-  pandas=1.5.3 \
-  openpyxl=3.1.2 \
-  folium=0.14.0 \
-  matplotlib=3.7.1 \
-  mapclassify=2.5.0 \
-  spatialite=0.0.3 \
-  rtree=1.0.1 \
-  pyproj=3.5.0 \
-  geopandas=0.13.0 \
-  geocube=0.4.0 \
-  numpy=1.24.2 \
-  scipy=1.10.1 \
-  scikit-learn=1.2.2 \
-  dash=2.9.3 \
-  flask=2.3.2 \
-  black=23.3.0 \
-  tokenize-rt=5.0.0
+  pandas==1.5.3 \
+  openpyxl==3.1.2 \
+  folium==0.14.0 \
+  matplotlib==3.7.1 \
+  mapclassify==2.5.0 \
+  spatialite==0.0.3 \
+  rtree==1.0.1 \
+  pyproj==3.5.0 \
+  geopandas==0.13.0 \
+  geocube==0.4.0 \
+  numpy==1.24.2 \
+  scipy==1.10.1 \
+  scikit-learn==1.2.2 \
+  dash==2.9.3 \
+  flask==2.3.2 \
+  black==23.3.0 \
+  tokenize-rt==5.0.0
