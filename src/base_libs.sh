@@ -8,7 +8,8 @@ pip install -U pip
 
 # C
 sudo apt-get install -y \
-  libsqlite3-mod-spatialite
+  libsqlite3-mod-spatialite \
+  parallel
 
 # R
 apt-get install -y \
