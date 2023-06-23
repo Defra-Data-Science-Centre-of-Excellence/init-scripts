@@ -15,16 +15,3 @@ pip install \
 # Mosaic
 pip install \
   databricks-mosaic
-
-# PySpark Vector Files
-sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-sudo apt-get update
-sudo apt-get install -y \
-  libudunits2-dev \
-  libgdal-dev \
-  libgeos-dev \
-  libproj-dev \
-  libspatialindex-dev
-pip install \
-  pyogrio \
-  pyspark-vector-files
