@@ -4,6 +4,7 @@ sudo add-apt-repository ppa:ubuntugis/ppa
 
 # C
 sudo apt-get install -y \
+  apt-utils \
   libsqlite3-mod-spatialite \
   libudunits2-dev \
   libgdal-dev \
