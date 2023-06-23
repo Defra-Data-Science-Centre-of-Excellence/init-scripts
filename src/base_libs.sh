@@ -30,7 +30,7 @@ apt-get install -y \
   r-cran-biocmanager r-cran-janitor r-cran-odbc r-cran-rgdal r-cran-rpostgres r-cran-srvyr r-cran-zoo
 
 # Python
-pip install -r
+pip install \
   black tokenize-rt \
   pandas openpyxl \
   folium matplotlib mapclassify \
