@@ -56,4 +56,5 @@ python -m pip install \
   dash==2.9.3 \
   flask==2.3.2 \
   black==23.3.0 \
-  tokenize-rt==5.0.0
+  tokenize-rt==5.0.0 \ 
+  rasterframes==0.11.1
