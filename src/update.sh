@@ -11,4 +11,4 @@ sudo apt-get autoclean -y
 # conda activate /databricks/python
 
 python -m pip install -U pip
-pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 python -m pip install -U 
+# pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 python -m pip install -U 
