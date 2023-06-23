@@ -4,7 +4,6 @@
 ### spark.serializer org.apache.spark.serializer.KryoSerializer
 ### spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
 DIR=/databricks/jars
-mkdir -p $DIR
 SPARK="3.0"
 SCALA="2.12"
 SEDONA="1.4.0"
