@@ -21,9 +21,12 @@ Short shell scripts for initialising data science Linux environments.
     <td><a href="CDAP-3_GeoVector.sh">CDAP 3_GeoVector</a></td>
     <td>run in cell, add init script, add spark config</td>
   </tr></tbody>
+  <tbody><tr>
+    <td><a href="src/swapfile.sh">SwapFile</a></td>
+    <td>run in terminal</td>
+    <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src/swapfile.sh | bash</code></td>
+  </tr>
 </table>
-
-
 
 
 ## Libraries

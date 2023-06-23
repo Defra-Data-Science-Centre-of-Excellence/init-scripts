@@ -38,7 +38,8 @@ apt-get install -y \
 
 # Python
 pip install \
-  pandas matplotlib openpyxl \
+  pandas openpyxl \
+  folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube
 '''
 dbutils.fs.put(file_func(filename), script, overwrite=True)
@@ -50,12 +51,13 @@ script = r'''#!/bin/bash
 # Sedona
 DIR=/dbfs/databricks/jars
 mkdir -p $DIR
-wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.1.0-25.2/geotools-wrapper-1.1.0-25.2.jar"
-wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-python-adapter-3.0_2.12/1.1.1-incubating/sedona-python-adapter-3.0_2.12-1.1.1-incubating.jar"
-wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-viz-3.0_2.12/1.1.1-incubating/sedona-viz-3.0_2.12-1.1.1-incubating.jar"
+VERSION="1.3.1"
+wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.3.0-27.2/geotools-wrapper-1.3.0-27.2.jar"
+wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-python-adapter-3.0_2.12/$VERSION-incubating/sedona-python-adapter-3.0_2.12-$VERSION-incubating.jar"
+wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-viz-3.0_2.12/$VERSION-incubating/sedona-viz-3.0_2.12-$VERSION-incubating.jar"
 cp $DIR/*.jar /databricks/jars
 pip install \
-  apache-sedona
+  apache-sedona==$VERSION
 echo '''[driver] {
   "spark.kryo.registrator" = "org.apache.sedona.core.serde.SedonaKryoRegistrator"
   "spark.serializer" = "org.apache.spark.serializer.KryoSerializer"
@@ -94,6 +96,8 @@ dbfs:/databricks/logs/4_training
 - Init Scripts:
 dbfs:/databricks/scripts/1_rstudio.sh
 dbfs:/databricks/scripts/3_geovector.sh
+- Environment Variables for all clusters:
+LD_LIBRARY_PATH=/usr/libs
 - 3_GeoVector Append to Spark config:
 spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator
 spark.serializer org.apache.spark.serializer.KryoSerializer

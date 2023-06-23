@@ -8,7 +8,8 @@ pip install -U pip
 
 # C
 sudo apt-get install -y \
-  libsqlite3-mod-spatialite
+  libsqlite3-mod-spatialite \
+  parallel
 
 # R
 apt-get install -y \
@@ -20,5 +21,6 @@ apt-get install -y \
 
 # Python
 pip install \
-  pandas matplotlib openpyxl \
+  pandas openpyxl \
+  folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube
