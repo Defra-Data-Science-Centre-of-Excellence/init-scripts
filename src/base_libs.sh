@@ -21,6 +21,7 @@ apt-get install -y \
 
 # Python
 pip install \
+  black tokenize-rt \
   pandas openpyxl \
   folium matplotlib mapclassify \
   spatialite rtree pyproj geopandas geocube
