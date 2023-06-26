@@ -2,13 +2,24 @@
 sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
 sudo add-apt-repository ppa:ubuntugis/ppa
 
-# Update
-sudo apt-get update
-pip install -U pip
-
 # C
 sudo apt-get install -y \
+  apt-utils \
   libsqlite3-mod-spatialite \
+  libudunits2-dev \
+  libgdal-dev \
+  libgeos-dev \
+  libproj-dev \
+  libspatialindex-dev \
+  libtiff5-dev \
+  libfreetype6-dev \
+  libpng-dev \
+  libjpeg-dev \
+  libfribidi-dev \
+  libharfbuzz-dev \
+  libfontconfig1-dev \
+  libcairo2-dev \
+  cmake \
   parallel
 
 # R
@@ -21,6 +32,7 @@ apt-get install -y \
 
 # Python
 pip install \
-  pandas openpyxl \
+  black tokenize-rt \
+  "pandas<2" openpyxl \
   folium matplotlib mapclassify \
-  spatialite rtree pyproj geopandas geocube
+  pyogrio spatialite rtree pyproj geopandas geocube

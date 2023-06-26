@@ -8,52 +8,50 @@ Short shell scripts for initialising data science Linux environments.
     <th>Environment</th>
     <th>Install Guide</th>
     <th></th>
+    <th>Description</th>
   </tr></thead>
   <tbody><tr>
+    <td><a href="DASH.sh">DASH</a></td>
+    <td>add repo, add init script, add environmental variables</td>
+    <td>init script: <code>/Repos/USER/init-scripts/DASH.sh</code></td>
+    <th>DASH initialisation global script for databricks clusters. †</th>
+  </tr><tr>
+    <td><a href="src/dbfs_clean.py">DBFS Clean</a></td>
+    <td>schedule for weekends</td>
+    <td></td>
+    <th>A schedulable job to remove user created files not in lab area.</th>
+  </tr><tr>
+    <td>rootcert</td>
+    <td>add manually</td>
+    <td></td>
+    <th>Root Certification to solve SSH issue requires secret and such not stored on GitHub.</th>
+  </tr><tr>
     <td><a href="SCE.sh">SCE</a></td>
     <td>run in terminal</td>
     <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh | bash</code></td>
+    <th>SCE initialisation script for SCE virtual Linux machine.</th>
   </tr><tr>
-    <td><a href="CDAP-1_RStudio.sh">CDAP 1_RStudio</a></td>
-    <td>run in cell, add init script, add environmental variables</td>
-    <td rowspan="2"><code>%sh wget -O- --no-check-certificate https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/CDAP.sh | bash</code></td>
-  </tr><tr>
-    <td><a href="CDAP-3_GeoVector.sh">CDAP 3_GeoVector</a></td>
-    <td>run in cell, add init script, add spark config</td>
-  </tr></tbody>
-  <tbody><tr>
     <td><a href="src/swapfile.sh">SwapFile</a></td>
     <td>run in terminal</td>
     <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src/swapfile.sh | bash</code></td>
-  </tr>
+    <th>For small SCE machines, reduce Out-of-Memory errors with extra swap storage.</th>
+  </tr></tbody>
 </table>
 
+> † [Sedona requires extra spark config](https://sedona.apache.org/latest-snapshot/setup/databricks/)  
 
-## Libraries
-| Library | in SCE | in CDAP 1_RStudio | in CDAP 3_GeoVector |
-| ------- | ------ | ----------------- | ------------------- |
-| [Update](src/update.sh) | ✔ | ✔ | ✔ |
-| [Base Libraries](src/base_libs.sh) | ✔ | ✔ | ✔ |
-| [Geospatial Libraries](src/gis_libs.sh) † | ❌ | ❌ | ✔ |
-| [Crontab AutoUpdate](SCE.sh#L9) | ✔ | ❌ | ❌ |
-| [nginx](src/nginx-server.sh) | ✔ | ❌ | ❌ |
-| [RStudio Server](src/rstudio-server.sh) | ✔ | ❌ | ❌ |
-| [Shiny Server](src/shiny-server.sh) | ✔ | ❌ | ❌ |
-| [Jupyter Server](src/jupyter-server.sh) ‡ | ❌ | ❌ | ❌ |
-
-> † [Sedona requires extra spark config](https://sedona.apache.org/setup/databricks/)  
-> ‡ WIP - help wanted  
-> *Base Libraries were defined using requests from several users.  Their dependency tree was reduced.  [Here](rsc/Find_Missing_R_Libs.R) is that analysis.*  
 
 <details>
   <summary><h3>Libraries: in depth</h3></summary>
 
 | Script | Lang | Library | Group |
 | ------ | ---- | ------- | ----- |
-| Runtime 10.4 | [R](https://docs.microsoft.com/en-us/azure/databricks/release-notes/runtime/10.4#--installed-r-libraries) |
-| Runtime 10.4 | [py](https://docs.microsoft.com/en-us/azure/databricks/release-notes/runtime/10.4#installed-python-libraries) |
+| Runtime 12 | [Databricks Runtime](https://docs.databricks.com/release-notes/runtime/releases.html)
+| Runtime 12 | [R]([https://docs.databricks.com/release-notes/runtime/12.2#--installed-r-libraries) |
+| Runtime 12 | [py](https://docs.databricks.com//release-notes/runtime/12.2#installed-python-libraries) |
 | Base | ppa | ppa:c2d4u.team/c2d4u4.0+ | R-Cran binary install |
 | Base | ppa | ppa:ubuntugis/ppa | Geospatial |
+| Base | bin | parallel | GNU |
 | Base | R | renv | RStudio Connect |
 | Base | R | devtools | RStudio Connect |
 | Base | R | rstudioapi | RStudio Connect |
@@ -79,10 +77,15 @@ Short shell scripts for initialising data science Linux environments.
 | Base | py | pandas |
 | Base | py | matplotlib |
 | Base | py | openpyxl |
+| Base | bin | libgdal-dev | Geospatial |
+| Base | bin | libgeos-dev | Geospatial |
+| Base | bin | libproj-dev | Geospatial |
+| Base | bin | libspatialindex-dev | Geospatial |
 | Base | bin | libsqlite3-mod-spatialite | Geospatial |
 | Base | py | spatialite | Geospatial |
 | Base | py | rtree | Geospatial |
 | Base | py | pyproj | Geospatial |
+| Base | py | pyogrio | Geospatial |
 | Base | py | geopandas | Geospatial |
 | Base | py | geocube | Geospatial |
 | Geo | jar | geotools-wrapper | Sedona |
@@ -90,13 +93,5 @@ Short shell scripts for initialising data science Linux environments.
 | Geo | jar | sedona-viz | Sedona |
 | Geo | py | apache-sedona | Sedona |
 | Geo | py | databricks-mosaic | Mosaic |
-| Geo | ppa | ppa:ubuntugis/ubuntugis-unstable | pyspark-vector-files |
-| Geo | bin | libudunits-dev | pyspark-vector-files |
-| Geo | bin | libgdal-dev | pyspark-vector-files |
-| Geo | bin | libgeos-dev | pyspark-vector-files |
-| Geo | bin | libproj-dev | pyspark-vector-files |
-| Geo | bin | libspatialindex-dev | pyspark-vector-files |
-| Geo | py | pyogrio | pyspark-vector-files |
-| Geo | py | pyspark-vector-files | pyspark-vector-files |
 
 </details>
