@@ -8,45 +8,38 @@ Short shell scripts for initialising data science Linux environments.
     <th>Environment</th>
     <th>Install Guide</th>
     <th></th>
+    <th>Description</th>
   </tr></thead>
   <tbody><tr>
     <td><a href="DASH.sh">DASH</a></td>
     <td>add repo, add init script, add environmental variables</td>
-    <td><code>/Repos/USER/init-scripts/DASH.sh</code></td>
+    <td>init script: <code>/Repos/USER/init-scripts/DASH.sh</code></td>
+    <th>DASH initialisation global script for databricks clusters. †</th>
   </tr><tr>
     <td><a href="src/dbfs_clean.py">DBFS Clean</a></td>
     <td>schedule for weekends</td>
     <td></td>
+    <th>A schedulable job to remove user created files not in lab area.</th>
   </tr><tr>
     <td>rootcert</td>
     <td>add manually</td>
     <td></td>
+    <th>Root Certification to solve SSH issue requires secret and such not stored on GitHub.</th>
   </tr><tr>
     <td><a href="SCE.sh">SCE</a></td>
     <td>run in terminal</td>
     <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh | bash</code></td>
+    <th>SCE initialisation script for SCE virtual Linux machine.</th>
   </tr><tr>
     <td><a href="src/swapfile.sh">SwapFile</a></td>
     <td>run in terminal</td>
     <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src/swapfile.sh | bash</code></td>
+    <th>For small SCE machines, reduce Out-of-Memory errors with extra swap storage.</th>
   </tr></tbody>
 </table>
 
-
-## Libraries
-| Library | in SCE | in DASH 1_RStudio | in DASH 3_GeoVector |
-| ------- | ------ | ----------------- | ------------------- |
-| [Update](src/update.sh) | ✔ | ✔ | ✔ |
-| [Base Libraries](src/base_libs.sh) | ✔ | ✔ | ✔ |
-| [Geospatial Libraries](src/gis_libs.sh) † | ❌ | ❌ | ✔ |
-| [Crontab AutoUpdate](SCE.sh#L9) | ✔ | ❌ | ❌ |
-| [nginx](src/nginx-server.sh) | ✔ | ❌ | ❌ |
-| [RStudio Server](src/rstudio-server.sh) | ✔ | ❌ | ❌ |
-| [Shiny Server](src/shiny-server.sh) | ✔ | ❌ | ❌ |
-| [Jupyter Server](src/jupyter-server.sh) ‡ | ❌ | ❌ | ❌ |
-
 > † [Sedona requires extra spark config](https://sedona.apache.org/latest-snapshot/setup/databricks/)  
-> ‡ WIP - help wanted
+
 
 <details>
   <summary><h3>Libraries: in depth</h3></summary>
