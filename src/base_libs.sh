@@ -33,6 +33,6 @@ apt-get install -y \
 # Python
 pip install \
   black tokenize-rt \
-  pandas openpyxl \
+  pandas==1 openpyxl \
   folium matplotlib mapclassify \
   pyogrio spatialite rtree pyproj geopandas geocube
