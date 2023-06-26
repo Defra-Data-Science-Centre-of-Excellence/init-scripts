@@ -14,6 +14,14 @@ Short shell scripts for initialising data science Linux environments.
     <td>add repo, add init script, add environmental variables</td>
     <td><code>/Repos/USER/init-scripts/DASH.sh</code></td>
   </tr><tr>
+    <td><a href="src/dbfs_clean.py">DBFS Clean</a></td>
+    <td>schedule for weekends</td>
+    <td></td>
+  </tr><tr>
+    <td>rootcert</td>
+    <td>add manually</td>
+    <td></td>
+  </tr><tr>
     <td><a href="SCE.sh">SCE</a></td>
     <td>run in terminal</td>
     <td><code>wget -O- https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/SCE.sh | bash</code></td>
@@ -28,7 +36,6 @@ Short shell scripts for initialising data science Linux environments.
 ## Libraries
 | Library | in SCE | in DASH 1_RStudio | in DASH 3_GeoVector |
 | ------- | ------ | ----------------- | ------------------- |
-| rootcert | ❌ | ⚙️ | ⚙️ |
 | [Update](src/update.sh) | ✔ | ✔ | ✔ |
 | [Base Libraries](src/base_libs.sh) | ✔ | ✔ | ✔ |
 | [Geospatial Libraries](src/gis_libs.sh) † | ❌ | ❌ | ✔ |
@@ -38,7 +45,6 @@ Short shell scripts for initialising data science Linux environments.
 | [Shiny Server](src/shiny-server.sh) | ✔ | ❌ | ❌ |
 | [Jupyter Server](src/jupyter-server.sh) ‡ | ❌ | ❌ | ❌ |
 
-> ⚙️ manually add the rootcert init script
 > † [Sedona requires extra spark config](https://sedona.apache.org/latest-snapshot/setup/databricks/)  
 > ‡ WIP - help wanted
 
