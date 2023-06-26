@@ -9,7 +9,7 @@ if  [[ -f $rootcert ]]; then  # If file exists
 fi
 
 
-URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/aw-dev/src
+URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src
 wget $URL/update.sh -O- | bash  # Run URL script
 wget $URL/base_libs.sh -O- | bash
 if [[ "$DB_CLUSTER_NAME" == *"Geo"* ]]; then  # If Geo in cluster name
