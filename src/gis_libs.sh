@@ -4,7 +4,7 @@
 ### spark.serializer org.apache.spark.serializer.KryoSerializer
 ### spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
 DIR=/databricks/jars
-if [[ "$DB_CLUSTER_NAME" == *"DBR13"* ]]; then
+if [[ "$DB_CLUSTER_NAME" == *"DBR13"* ]]; then  # If DBR13 in cluster name
   SPARK="3.4"
 else
   SPARK="3.0"
