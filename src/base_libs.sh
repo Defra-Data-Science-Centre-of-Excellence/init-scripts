@@ -36,3 +36,13 @@ pip install \
   "pandas<2" openpyxl \
   folium matplotlib mapclassify \
   pyogrio spatialite rtree pyproj geopandas geocube
+
+# Additional configs
+echo 'message(r"(
+    ____  ___   _____ __  __
+   / __ \/   | / ___// / / /
+  / / / / /| | \__ \/ /_/ /
+ / /_/ / ___ |___/ / __  /
+/_____/_/  |_/____/_/ /_/ Defra
+https://github.com/Defra-Data-Science-Centre-of-Excellence/CDAP_training#r-and-rstudio-on-the-dash-platform
+)")' >> /usr/lib/R/etc/Rprofile.site
