@@ -32,7 +32,7 @@ apt-get install -y \
 
 # Python
 pip install \
-  openpyxl \
+  dtrx openpyxl \
   folium mapclassify \
   pyogrio spatialite rtree pyproj geopandas geocube
 
