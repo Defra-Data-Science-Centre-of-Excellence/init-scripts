@@ -3,7 +3,7 @@ set -ex
 echo $DB_CLUSTER_NAME
 
 
-rootcert=/dbfs/databricks/init-scripts/rootcert.sh
+rootcert=/dbfs/databricks/scripts/rootcert.sh
 if  [[ -f $rootcert ]]; then  # If file exists
   . $rootcert  # Run file
 fi
