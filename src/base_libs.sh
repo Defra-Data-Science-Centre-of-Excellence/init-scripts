@@ -24,6 +24,7 @@ sudo apt-get install -y \
 
 # R
 apt-get install -y \
+  r-cran-rcpp \
   r-cran-renv r-cran-devtools r-cran-rstudioapi r-cran-reticulate r-cran-packrat r-cran-rsconnect \
   r-cran-dt r-cran-shinyjs r-cran-shinydashboard r-cran-shinycssloaders \
   r-cran-sf r-cran-raster r-cran-leaflet \
