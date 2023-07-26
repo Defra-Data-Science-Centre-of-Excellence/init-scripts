@@ -33,7 +33,7 @@ apt-get install -y \
 # Python
 pip install \
   openpyxl \
-  folium mapclassify \
+  contextily folium mapclassify \
   pyogrio spatialite rtree pyproj geopandas geocube
 
 # Additional configs
