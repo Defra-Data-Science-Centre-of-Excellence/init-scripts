@@ -12,6 +12,6 @@ fi
 URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src
 wget $URL/update.sh -O- | bash  # Run URL script
 wget $URL/base_libs.sh -O- | bash
-if [[ "$DB_CLUSTER_NAME" == *"Geo"* ]]; then  # If Geo in cluster name
+if [[ "$DB_CLUSTER_NAME" == *"_Geo"* ]]; then  # If Geo in cluster name
   wget $URL/gis_libs.sh -O- | bash
 fi
