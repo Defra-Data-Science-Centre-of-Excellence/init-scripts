@@ -20,6 +20,7 @@ sudo apt-get install -y \
   libfontconfig1-dev \
   libcairo2-dev \
   cmake \
+  ffmpeg \
   parallel
 
 # R
