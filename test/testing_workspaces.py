@@ -5,8 +5,8 @@
 # COMMAND ----------
 
 import pandas as pd
-my_postfix = "2405"
-my_mountpoint_name = "SMS-Project"
+my_postfix = "2402"
+my_mountpoint_name = "sos_project"
 pdf = pd.DataFrame({"a1":[2,3,4],"b2":[5,9,55]})
 sdf = spark.createDataFrame(pdf)
 
@@ -34,7 +34,7 @@ except:
 try:
     mount_point="dbfs:/mnt/base/unrestricted/"
     sdf.write.parquet(mount_point + "A_df_"+ my_postfix +".parquet", mode='overwrite') # This needs to fail!
-    print("Test 1.1 passed.")
+    print("Test 1.2 passed.")
 except:
     print("Writing failed, so test 1.2 has passed.")
 
@@ -120,7 +120,10 @@ display(sdf_)
 # COMMAND ----------
 
 try:
-    mount_point ="dbfs:/mnt/lab/restricted/sos_project/"
+    if my_mountpoint_name == "sos_project":
+        mount_point ="dbfs:/mnt/lab/restricted/SMS-Project/"
+    else:
+        mount_point ="dbfs:/mnt/lab/restricted/sos_project/"
     sdf.write.parquet(mount_point + "E_df_"+ my_postfix +".parquet", mode='overwrite')  
     print("Test 1.8 appears to work when it should not.")
 except:
@@ -134,8 +137,14 @@ except:
 # COMMAND ----------
 
 try:
-    mount_point ="dbfs:/mnt/lab/restricted/sos_project/" + "rpa_sos_dashb_siti/"
+    mount_point ="/dbfs/mnt/lab/restricted/sos_project/" + "rpa_sos_dashb_siti/"
     cars_  = pd.read_csv(mount_point  + "cars.csv") 
-    print("Test 1.9 passed when it should not.")
+    if my_mountpoint_name == "sos_project":
+        print("Test 1.9 passed as it should.")
+    else: 
+        print("Test 1.9 passed when it should not.")
 except:
-    print("Reading failed, so test 1.9 has passed.")
+    if my_mountpoint_name == "sos_project":
+        print("Reading failed, so 1.9 has failed.")
+    else: 
+        print("Reading failed, so test 1.9 has passed.")
