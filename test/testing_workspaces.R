@@ -111,13 +111,17 @@ testing_workspaces <- function(
   tryCatch(
     { 
       # Test 2.8
-      path="/dbfs/mnt/lab/restricted/sos_project/"
+      if (my_mountpoint_name != "sos_project"){
+        path="/dbfs/mnt/lab/restricted/sos_project/"
+      } else { 
+        path="/dbfs/mnt/lab/restricted/NI-Project/"
+      }
       setwd(path) 
       E=data.frame(a=51:53, b=25:27)
       write.csv(E, file=paste0("E_", my_postfix, ".csv"))  # This should fail 
       print("Test 2.8 worked when it should not.")
     },
-    error = function(e){print("Changing directory into lab/restricted/sos_project failed, so test 2.8 has passed.")},
+    error = function(e){print( paste0("Changing directory into ", path, " failed, so test 2.8 has passed."))},
     warning = function(w){  
       print("We got a warning from 2.8 this is odd!")
     }
@@ -126,11 +130,16 @@ testing_workspaces <- function(
   tryCatch(
     { 
       # Test 2.9
-      path="/dbfs/mnt/lab/restricted/sos_project/" 
+      # Test 2.8
+      if (my_mountpoint_name != "sos_project"){
+        path="/dbfs/mnt/lab/restricted/sos_project/"
+      } else { 
+        path="/dbfs/mnt/lab/restricted/NI-Project/"
+      }
       myF=read.csv(file= paste0(path, "rpa_sos_dashb_siti/cars.csv"))  
       print("Test 2.9 worked when it should not.")
     },
-    error = function(e){print("Reading from: /dbfs/mnt/lab/restricted/sos_project/ failed, so test 2.9 has passed.")},
+    error = function(e){print(paste0("Reading from directory ", path, " failed, so test 2.9 has passed."))},
     warning = function(w){   
       if(grepl(pattern = "No such file or directory", x = w)){
         print("No such file or directory, so test 2.9 has passed.")
