@@ -4,12 +4,7 @@
 ### spark.serializer org.apache.spark.serializer.KryoSerializer
 ### spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
 DIR=/databricks/jars
-export PYSPARK_VERSION=$(python -c "import pyspark; print(pyspark.__version__[:3])")
-if [[ $PYSPARK_VERSION == "3.4" ]]; then
-  SPARK="3.4"
-else
-  SPARK="3.0"
-fi
+SPARK="3.4"
 SCALA="2.12"
 SEDONA="1.4.1"
 wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.4.0-28.2/geotools-wrapper-1.4.0-28.2.jar"
