@@ -7,5 +7,5 @@ bash $DIR/miniconda_installer.sh -b -u -f -p $DIR
 
 export PATH=$PATH:$DIR/bin
 
-$DIR/bin/conda update --all
-$DIR/bin/conda install -c conda-forge libgdal-arrow-parquet gdal
+$DIR/bin/conda update -y --all
+$DIR/bin/conda install -y -c conda-forge libgdal-arrow-parquet gdal
