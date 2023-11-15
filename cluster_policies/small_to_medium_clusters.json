@@ -1,0 +1,81 @@
+{
+    "spark_conf.spark.databricks.cluster.profile": {
+      "type": "forbidden",
+      "hidden": true
+    },
+    "spark_version": {
+      "type": "unlimited",
+      "defaultValue": "auto:latest"
+    },
+    "autotermination_minutes": {
+      "type": "unlimited",
+      "defaultValue": 60,
+      "isOptional": true
+    },
+    "node_type_id": {
+      "type": "whitelist",
+      "values": [
+        "Standard_E8_v3",
+        "Standard_DS12_v2"
+      ],
+      "hidden": false
+    },
+    "driver_node_type_id": {
+      "type": "whitelist",
+      "values": [
+        "Standard_D3_v2",
+        "Standard_F16"
+      ],
+      "hidden": false
+    },
+    "autoscale.min_workers": {
+      "type": "fixed",
+      "value": 1,
+      "hidden": true
+    },
+    "autoscale.max_workers": {
+      "type": "range",
+      "maxValue": 10,
+      "defaultValue": 10
+    },
+    "num_workers": {
+      "type": "forbidden",
+      "hidden": true
+    },
+    "azure_attributes.availability": {
+      "type": "unlimited",
+      "defaultValue": "ON_DEMAND_AZURE"
+    },
+    "azure_attributes.spot_bid_max_price": {
+      "type": "fixed",
+      "value": -1,
+      "hidden": true
+    },
+    "instance_pool_id": {
+      "type": "forbidden",
+      "hidden": true
+    },
+    "driver_instance_pool_id": {
+      "type": "forbidden",
+      "hidden": true
+    },
+        
+    "spark_conf.spark.databricks.delta.preview.enabled": {
+        "type": "fixed",
+        "value": "true",
+        "hidden": false
+      },
+      "init_scripts.0.workspace.destination": {
+        "type": "fixed",
+        "value": "<DASH.sh location>"
+      },
+      "cluster_type": {
+        "type": "fixed",
+        "value": "all-purpose"
+      },
+      "custom_tags.WORKSPACE_NAME": {
+        "type": "fixed",
+        "value": "<WORKSPACE_NAME>"
+      }
+
+  }
