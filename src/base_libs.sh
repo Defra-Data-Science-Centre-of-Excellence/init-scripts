@@ -20,14 +20,15 @@ sudo apt-get install -y \
   libfontconfig1-dev \
   libcairo2-dev \
   cmake \
+  ffmpeg \
   parallel
 
 # R
 apt-get install -y \
   r-cran-renv r-cran-devtools r-cran-rstudioapi r-cran-reticulate r-cran-packrat r-cran-rsconnect \
   r-cran-dt r-cran-shinyjs r-cran-shinydashboard r-cran-shinycssloaders \
-  r-cran-sf r-cran-raster r-cran-leaflet \
   r-cran-arrow r-cran-plotly \
+  r-cran-sf r-cran-sfarrow r-cran-raster r-cran-leaflet \
   r-cran-biocmanager r-cran-janitor r-cran-odbc r-cran-rgdal r-cran-rpostgres r-cran-srvyr r-cran-zoo
 
 # Python
