@@ -16,3 +16,7 @@ pip install \
 # Mosaic
 pip install \
   databricks-mosaic
+
+# Sedona 1.5.0 requires pydeck
+pip install \
+  pydeck==0.8.0
