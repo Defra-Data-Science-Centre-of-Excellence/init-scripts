@@ -1,0 +1,53 @@
+{
+  "spark_version": {
+    "type": "regex",
+    "pattern": ".*gpu-ml.*",
+    "defaultValue": "12.2.x-gpu-ml-scala2.12"
+  },
+  "autotermination_minutes": {
+    "type": "unlimited",
+    "defaultValue": 60,
+    "isOptional": true
+  },
+  "node_type_id": {
+    "type": "whitelist",
+    "values": [
+      "Standard_NC6s_v3",
+      "Standard_NC12s_v3",
+      "Standard_NC24s_v3"
+    ],
+    "defaultValue": "Standard_NC6s_v3"
+  },
+  "autoscale.min_workers": {
+    "type": "fixed",
+    "value": 2,
+    "hidden": true
+  },
+  "autoscale.max_workers": {
+    "type": "range",
+    "maxValue": 10,
+    "defaultValue": 6
+  },
+  "driver_node_type_id": {
+    "type": "whitelist",
+    "values": [
+      "Standard_NC6s_v3",
+      "Standard_NC12s_v3",
+      "Standard_NC24s_v3"
+    ],
+    "defaultValue": "Standard_NC6s_v3"
+  },
+  "init_scripts.0.workspace.destination": {
+    "type": "fixed",
+    "value": "<DASH.sh location>"
+  },
+  "cluster_type": {
+    "type": "fixed",
+    "value": "all-purpose"
+  },
+  "custom_tags.WORKSPACE_NAME": {
+    "type": "fixed",
+    "value": "<WORKSPACE_NAME>"
+  }
+
+}
