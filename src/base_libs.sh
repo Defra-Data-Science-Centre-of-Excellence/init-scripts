@@ -33,9 +33,9 @@ apt-get install -y \
 
 # Python
 pip install \
-  openpyxl \
+  "pandas[all]<2" \
   pyogrio spatialite rtree pyproj geopandas geocube \
-  geodatasets contextily folium mapclassify \
+  geodatasets contextily folium mapclassify
 
 # Additional configs
 echo 'message(r"(
