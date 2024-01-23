@@ -33,7 +33,7 @@ apt-get install -y \
 
 # Python
 pip install \
-  pandas[all] \
+  "pandas[all]<2" \
   pyogrio spatialite rtree pyproj geopandas geocube \
   geodatasets contextily folium mapclassify
 
