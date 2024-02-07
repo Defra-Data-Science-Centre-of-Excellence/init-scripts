@@ -25,12 +25,12 @@ sudo apt-get install -y \
 
 # R
 apt-get install -y \
-  r-cran-renv r-cran-devtools r-cran-rstudioapi r-cran-reticulate r-cran-packrat r-cran-rsconnect \
-  r-cran-dt r-cran-shinyjs r-cran-shinydashboard r-cran-shinycssloaders \
-  r-cran-arrow r-cran-plotly \
-  r-cran-sf r-cran-sfarrow r-cran-raster r-cran-leaflet \
-  r-cran-biocmanager r-cran-janitor r-cran-odbc r-cran-rgdal r-cran-rpostgres r-cran-srvyr r-cran-zoo \
-  r-cran-bh r-cran-cli r-cran-cowplot r-cran-crosstalk r-cran-ggplot2 r-cran-lazyeval r-cran-openxlsx r-cran-reticulate r-cran-rlang r-cran-snakecase r-cran-viridis
+  r-cran-rlang r-cran-renv r-cran-devtools r-cran-rstudioapi r-cran-reticulate r-cran-packrat r-cran-rsconnect \
+  r-cran-openxlsx r-cran-arrow r-cran-odbc r-cran-rpostgres \
+  r-cran-dt r-cran-shinyjs r-cran-shinydashboard r-cran-shinycssloaders r-cran-crosstalk \
+  r-cran-plotly r-cran-ggplot2 r-cran-cowplot r-cran-viridis \
+  r-cran-rgdal r-cran-sf r-cran-sfarrow r-cran-raster r-cran-leaflet \
+  r-cran-biocmanager r-cran-janitor r-cran-srvyr r-cran-zoo r-cran-bh r-cran-cli r-cran-lazyeval r-cran-snakecase
 
      
 
