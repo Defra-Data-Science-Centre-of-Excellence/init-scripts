@@ -32,11 +32,10 @@ apt-get install -y \
   r-cran-rgdal r-cran-sf r-cran-sfarrow r-cran-raster r-cran-leaflet \
   r-cran-biocmanager r-cran-janitor r-cran-srvyr r-cran-zoo r-cran-bh r-cran-cli r-cran-lazyeval r-cran-snakecase
 
-     
-
 # Python
 pip install \
   "pandas[all]<2" \
+  "ruff<0.2" pip-tools pytest \
   pyogrio spatialite rtree pyproj geopandas geocube \
   geodatasets contextily folium mapclassify
 
