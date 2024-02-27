@@ -1,0 +1,63 @@
+{
+    "spark_conf.spark.databricks.cluster.profile": {
+      "type": "fixed",
+      "value": "singleNode",
+      "hidden": true
+    },
+    "spark_version": {
+      "type": "regex",
+      "pattern": "^(?!.*gpu).*ml.*",
+      "defaultValue": "auto:latest-ml"
+    },
+    "runtime_engine": {
+      "type": "fixed",
+      "value": "STANDARD",
+      "hidden": true
+    },
+    "autotermination_minutes": {
+      "type": "fixed",
+      "value": 0,
+      "hidden": true
+    },
+    "node_type_id": {
+      "type": "fixed",
+      "value": "Standard_D4_v2",
+      "hidden": true
+    },
+    "driver_node_type_id": {
+      "type": "fixed",
+      "value": "Standard_D4_v2",
+      "hidden": true
+    },
+    "num_workers": {
+      "type": "fixed",
+      "value": 0,
+      "hidden": true
+    },
+    "azure_attributes.availability": {
+      "type": "unlimited",
+      "defaultValue": "ON_DEMAND_AZURE"
+    },
+    "azure_attributes.spot_bid_max_price": {
+      "type": "fixed",
+      "value": -1,
+      "hidden": true
+    },
+    "spark_conf.spark.databricks.delta.preview.enabled": {
+      "type": "fixed",
+      "value": "true",
+      "hidden": false
+    },
+    "init_scripts.0.workspace.destination": {
+      "type": "fixed",
+      "value": "<DASH.sh location>"
+    },
+    "cluster_type": {
+      "type": "fixed",
+      "value": "all-purpose"
+    },
+    "custom_tags.WORKSPACE_NAME": {
+      "type": "fixed",
+      "value": "<WORKSPACE_NAME>"
+    }
+  }

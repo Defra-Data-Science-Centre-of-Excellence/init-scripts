@@ -5,7 +5,7 @@
 # MAGIC > |--------|-------------------|----------------------------------------------------------------------------|---------------------------|
 # MAGIC > | ✔️ | osmnx             | `osmnx.geometries_from_place`, `geopandas.to_file`, `geopandas.to_parquet` | downloads data
 # MAGIC > | ✔️ | osdatahub         | OS FeaturesAPI                                                             | downloads data, requires key
-# MAGIC > | ❌ | R sf              | `sf::st_load`, `sf::plot`                                                  | sf install is broken
+# MAGIC > | ❌ | R sf              | `sf::st_load`, `sf::plot`                                                  | sf install is broken for notebooks but works for tmux and rstudio server
 # MAGIC > | ✔️ | contextily        | `contextily.add_basemap`, OS MapsAPI                                       | requires key and provider
 # MAGIC > | ✔️ | folium            | `geopandas.explore`, OS MapsAPI                                            | requires key and provider
 # MAGIC > | ✔️ | apache-sedona     | Register, `ST_GeomFromWKB`, `ST_Length`, `ST_Area`                         |
