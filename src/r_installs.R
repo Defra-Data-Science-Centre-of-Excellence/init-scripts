@@ -12,7 +12,7 @@ lib_list <- c("rlang", "renv",
               "sfarrow", "raster", 
               "leaflet", "BiocManager", 
               "janitor", "srvyr", 
-              "zoo", "bh", 
+              "zoo", "BH", 
               "cli", "lazyeval",
               "snakecase"
               )
