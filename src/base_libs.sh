@@ -46,5 +46,5 @@ echo 'message(r"(
   / / / / /| | \__ \/ /_/ /
  / /_/ / ___ |___/ / __  /
 /_____/_/  |_/____/_/ /_/ Defra
-https://github.com/Defra-Data-Science-Centre-of-Excellence/CDAP_training#r-and-rstudio-on-the-dash-platform
+https://didactic-doodle-58b6846e.pages.github.io/
 )")' >> /usr/lib/R/etc/Rprofile.site
