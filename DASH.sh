@@ -6,4 +6,5 @@ URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/in
 wget $URL/rootcerts.sh -O- | bash
 wget $URL/update.sh -O- | bash 
 wget $URL/base_libs.sh -O- | bash
+wget $URL/r_installs.R -O- | R CMD batch
 wget $URL/gis_libs.sh -O- | bash

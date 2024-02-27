@@ -1,6 +1,6 @@
 # Repos
-sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
-sudo add-apt-repository ppa:ubuntugis/ppa
+#sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+#sudo add-apt-repository ppa:ubuntugis/ppa
 
 # C
 sudo apt-get install -y \
@@ -24,21 +24,20 @@ sudo apt-get install -y \
   parallel
 
 # R
-apt-get install -y \
-  r-cran-rlang r-cran-renv r-cran-devtools r-cran-rstudioapi r-cran-reticulate r-cran-packrat r-cran-rsconnect \
-  r-cran-openxlsx r-cran-arrow r-cran-odbc r-cran-rpostgres \
-  r-cran-dt r-cran-shinyjs r-cran-shinydashboard r-cran-shinycssloaders r-cran-crosstalk \
-  r-cran-plotly r-cran-ggplot2 r-cran-cowplot r-cran-viridis \
-  r-cran-rgdal r-cran-sf r-cran-sfarrow r-cran-raster r-cran-leaflet \
-  r-cran-biocmanager r-cran-janitor r-cran-srvyr r-cran-zoo r-cran-bh r-cran-cli r-cran-lazyeval r-cran-snakecase
-
-     
+#apt-get install -y \
+#  r-cran-rlang r-cran-renv r-cran-devtools r-cran-rstudioapi r-cran-reticulate r-cran-packrat r-cran-rsconnect \
+#  r-cran-openxlsx r-cran-arrow r-cran-odbc r-cran-rpostgres \
+#  r-cran-dt r-cran-shinyjs r-cran-shinydashboard r-cran-shinycssloaders r-cran-crosstalk \
+#  r-cran-plotly r-cran-ggplot2 r-cran-cowplot r-cran-viridis \
+#  r-cran-rgdal r-cran-sf r-cran-sfarrow r-cran-raster r-cran-leaflet \
+#  r-cran-biocmanager r-cran-janitor r-cran-srvyr r-cran-zoo r-cran-bh r-cran-cli r-cran-lazyeval r-cran-snakecase
+    
 
 # Python
 pip install \
   "pandas[all]<2" \
   pyogrio spatialite rtree pyproj geopandas geocube \
-  geodatasets contextily folium mapclassify
+  geodatasets contextily folium mapclassify pip-tools
 
 # Additional configs
 echo 'message(r"(
