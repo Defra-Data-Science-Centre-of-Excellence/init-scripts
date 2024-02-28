@@ -2,7 +2,7 @@
 RAW_FILE="/dbfs/databricks/scripts/cscrootcert.crt"
 BUNDLE_FILE="/etc/ssl/certs/cscrootcert.crt"
  
-cp $FILE $BUNDLE_FILE
+cp $RAW_FILE $BUNDLE_FILE
 update-ca-certificates
 
 # PEM_FILE="/etc/ssl/certs/cscrootcert.pem"
