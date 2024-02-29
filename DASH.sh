@@ -1,5 +1,4 @@
-#!/bin/bash
-set -ex
+#!/bin/bash 
 echo $DB_CLUSTER_NAME
 URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/pantelisindefra-patch-1/src
 
@@ -14,3 +13,4 @@ fi
 if [[ "$DB_CLUSTER_NAME" == *"Geo"* ]]; then  # If Geo in cluster name
   wget $URL/gis_libs.sh -O- | bash
 fi
+
