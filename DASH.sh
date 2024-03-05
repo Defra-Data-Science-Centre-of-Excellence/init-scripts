@@ -3,11 +3,11 @@ echo $DB_CLUSTER_NAME
 
 URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/pantelisindefra-patch-1/src
 
-wget $URL/rootcerts.sh -O- | bash -s
+# wget $URL/rootcerts.sh -O- | bash -s
 wget $URL/update.sh -O- | bash 
 wget $URL/base_libs.sh -O- | bash 
 
-if [[ "$DB_CLUSTER_NAME" == *"Rlang"* ]]; then  # If Rlang in cluster name
+if [[ "$DB_CLUSTER_NAME" == *"RStu"* ]]; then  # If RStu in cluster name
   wget -qO- $URL/r_installs.R | Rscript - 
 fi
 
