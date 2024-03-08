@@ -4,7 +4,7 @@
 ### spark.serializer org.apache.spark.serializer.KryoSerializer
 ### spark.sql.extensions org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions
 DIR=/databricks/jars
-SPARK="3.5"
+SPARK="3.4"
 SCALA="2.12"
 SEDONA="1.5.1"
 wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.5.1-28.2/geotools-wrapper-1.5.1-28.2.jar"#"https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.4.0-28.2/geotools-wrapper-1.4.0-28.2.jar"
