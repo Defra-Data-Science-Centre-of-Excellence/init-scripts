@@ -1,5 +1,5 @@
 # https://kb.databricks.com/python/import-custom-ca-cert
-cp "/dbfs/databricks/scripts/cscrootcert.crt" "/usr/local/share/ca-certificates/myca.crt"
+cp "/dbfs/databricks/scripts/cscrootcerts.crt" "/usr/local/share/ca-certificates/myca.crt"
 
 update-ca-certificates
 
