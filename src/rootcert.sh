@@ -1,10 +1,6 @@
-#!/bin/bash
-RAW_FILE="/dbfs/databricks/scripts/cscrootcert.crt"
-BUNDLE_FILE="/usr/local/share/ca-certificates/myca.crt"
+# https://kb.databricks.com/python/import-custom-ca-cert
+cp "/dbfs/databricks/scripts/cscrootcert.crt" "/usr/local/share/ca-certificates/myca.crt"
 
-cp $RAW_FILE $BUNDLE_FILE
-
-# Rest is taken from https://kb.databricks.com/python/import-custom-ca-cert
 update-ca-certificates
 
 PEM_FILE="/etc/ssl/certs/myca.pem"
