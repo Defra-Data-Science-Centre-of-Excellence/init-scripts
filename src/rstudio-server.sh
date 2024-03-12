@@ -1,3 +1,4 @@
+#!/bin/bash
 NGINX_DEFAULT='''
 map $http_upgrade $connection_upgrade {   
    default upgrade;

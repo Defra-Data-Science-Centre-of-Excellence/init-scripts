@@ -1,3 +1,4 @@
+#!/bin/bash
 # Sedona
 ## requires spark config:
 ### spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator

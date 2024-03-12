@@ -1,3 +1,4 @@
+#!/bin/bash
 # Repos
 sudo add-apt-repository ppa:ubuntugis/ppa
 

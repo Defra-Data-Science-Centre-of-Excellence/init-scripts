@@ -1,3 +1,4 @@
+#!/bin/bash
 DIR=/databricks/miniconda
 mkdir -p $DIR
 

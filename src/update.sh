@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo rm -rf /var/lib/apt/lists/*
 sudo apt-get update -y
 sudo apt-get full-upgrade -y

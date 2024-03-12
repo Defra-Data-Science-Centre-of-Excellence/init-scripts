@@ -1,3 +1,4 @@
+#!/bin/bash
 # Clear extra folders
 find /dbfs/ -mindepth 1 -maxdepth 1 -type d \
   ! -name databricks \
