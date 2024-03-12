@@ -2,7 +2,7 @@
 set -ex
 echo $DB_CLUSTER_NAME
 
-URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/pantelisindefra-patch-1/src
+URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src
 wget $URL/rootcert.sh -O- | bash -ex
 wget $URL/update.sh -O- | bash  -ex
 wget $URL/base_libs.sh -O- | bash  -ex
