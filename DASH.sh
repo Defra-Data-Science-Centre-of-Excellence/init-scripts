@@ -1,9 +1,7 @@
 #!/bin/bash
 set -ex
-
 echo $DB_CLUSTER_NAME
 
-# - - - Install Scripts - - -
 URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/pantelisindefra-patch-1/src
 wget $URL/rootcert.sh -O- | bash -ex
 wget $URL/update.sh -O- | bash  -ex
@@ -14,4 +12,3 @@ fi
 if [[ "$DB_CLUSTER_NAME" == *"Geo"* ]]; then  # If Geo in cluster name
   wget $URL/gis_libs.sh -O- | bash
 fi
-# - - - Install Scripts - - -
