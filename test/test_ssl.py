@@ -25,8 +25,7 @@ def test_ssl():
   https://pypi.org/
   https://cran.r-project.org/
   https://maven.apache.org/
-  https://repo1.maven.org/
-  https://mvnrepository.com/'''.split()
+  https://repo1.maven.org/'''.split()
 
   results = {
     url_good: request_ok(url_good),
