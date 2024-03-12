@@ -1,6 +1,6 @@
 cp "/dbfs/databricks/scripts/cscrootcerts.crt" "/usr/local/share/ca-certificates/myca.crt"
-# Rest is taken from https://kb.databricks.com/python/import-custom-ca-cert
 
+# Rest is taken from https://kb.databricks.com/python/import-custom-ca-cert
 update-ca-certificates
 
 PEM_FILE="/etc/ssl/certs/myca.pem"
