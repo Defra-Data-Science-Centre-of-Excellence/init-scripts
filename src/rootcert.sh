@@ -1,17 +1,30 @@
 #!/bin/bash
-FILE="/dbfs/databricks/scripts/cscrootcerts.crt"
+RAW_FILE="/dbfs/databricks/scripts/cscrootcert.crt"
+BUNDLE_FILE="/usr/local/share/ca-certificates/myca.crt"
 
-# Split up and add certs to SSL
-awk 'BEGIN {c=0;} /-----BEGIN CERTIFICATE-----/ {c++} { print > "/usr/local/share/ca-certificates/cscrootcert-" c ".crt"}' < $FILE
+cp $RAW_FILE $BUNDLE_FILE
+
+# Rest is taken from https://kb.databricks.com/python/import-custom-ca-cert
 update-ca-certificates
 
-# Add certs to Java
-KEYSTORE=$JAVA_HOME"lib/security/cacerts"
-for ALIAS in $(ls /etc/ssl/certs/cscrootcert-*.pem); do
-  echo "Info: not adding $ALIAS using keytool, requires storepass >6chars"
-  # keytool -noprompt -import -trustcacerts -alias $ALIAS -keystore $KEYSTORE -storepass $PASSWORD
+PEM_FILE="/etc/ssl/certs/myca.pem"
+PASSWORD="changeit"
+JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+KEYSTORE="$JAVA_HOME/lib/security/cacerts"
+
+CERTS=$(grep 'END CERTIFICATE' $PEM_FILE| wc -l)
+
+# To process multiple certs with keytool, you need to extract
+# each one from the PEM file and import it into the Java KeyStore.
+
+for N in $(seq 0 $(($CERTS - 1))); do
+  ALIAS="$(basename $PEM_FILE)-$N"
+  echo "Adding to keystore with alias:$ALIAS"
+  cat $PEM_FILE |
+    awk "n==$N { print }; /END CERTIFICATE/ { n++ }" |
+    keytool -noprompt -import -trustcacerts \
+      -alias $ALIAS -keystore $KEYSTORE -storepass $PASSWORD
 done
 
-# Append certs to worker nodes
 echo "export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt" >> /databricks/spark/conf/spark-env.sh
-/databricks/spark/scripts/restart_dbfs_fuse_daemon.sh
+echo "export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt" >> /databricks/spark/conf/spark-env.sh
