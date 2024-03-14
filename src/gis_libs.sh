@@ -1,3 +1,4 @@
+#!/bin/bash
 # Sedona
 ## requires spark config:
 ### spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator
@@ -10,9 +11,7 @@ SEDONA="1.4.1"
 wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.4.0-28.2/geotools-wrapper-1.4.0-28.2.jar"
 wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-${SPARK}_${SCALA}/$SEDONA/sedona-spark-shaded-${SPARK}_${SCALA}-$SEDONA.jar"
 wget --no-check-certificate -NP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-viz-${SPARK}_${SCALA}/$SEDONA/sedona-viz-${SPARK}_${SCALA}-$SEDONA.jar"
-pip install \
-  apache-sedona==$SEDONA
+pip install apache-sedona==$SEDONA
 
 # Mosaic
-pip install \
-  databricks-mosaic
+pip install databricks-mosaic
