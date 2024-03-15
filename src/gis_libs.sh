@@ -1,4 +1,5 @@
 # Sedona
+## Requires DBR 14 LTS
 ## requires spark config:
 ### spark.kryo.registrator org.apache.sedona.core.serde.SedonaKryoRegistrator
 ### spark.serializer org.apache.spark.serializer.KryoSerializer
