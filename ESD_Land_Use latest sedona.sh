@@ -19,8 +19,4 @@ pip install pandana==0.7
 pip install shapely==2.0.2 
 pip install matplotlib==3.8.3 
 pip install mapclassify==2.6.1 
-pip install folium==0.15.1 
-pip install rasterio==1.3.9 
-pip install xarray==2024.02.0 
-pip install rioxarray==0.15.1
-pip install zarr==2.17.1
+pip install folium==0.15.1
