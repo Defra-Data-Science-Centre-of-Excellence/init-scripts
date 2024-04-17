@@ -2,7 +2,7 @@
 DIR=/databricks/miniconda
 mkdir -p $DIR
 
-wget --no-check-certificate -NP $DIR https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+wget --no-check-certificate -qNP $DIR https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash $DIR/Miniconda3-latest-Linux-x86_64.sh -bufp $DIR
 
 $DIR/bin/conda config --set ssl_verify false
