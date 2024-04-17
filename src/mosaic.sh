@@ -63,9 +63,9 @@ then
     # copy from github
     # TODO: in v0.4.1, include $GITHUB_VERSION
     GITHUB_REPO_PATH=databrickslabs/mosaic/main/resources/gdal/jammy
-    sudo wget -nv -P /usr/lib -nc https://raw.githubusercontent.com/$GITHUB_REPO_PATH/libgdalalljni.so
-    sudo wget -nv -P /usr/lib -nc https://raw.githubusercontent.com/$GITHUB_REPO_PATH/libgdalalljni.so.30
-    sudo wget -nv -P /usr/lib -nc https://raw.githubusercontent.com/$GITHUB_REPO_PATH/libgdalalljni.so.30.0.3
+    sudo wget --no-check-certificate -qNP /usr/lib https://raw.githubusercontent.com/$GITHUB_REPO_PATH/libgdalalljni.so
+    sudo wget --no-check-certificate -qNP /usr/lib https://raw.githubusercontent.com/$GITHUB_REPO_PATH/libgdalalljni.so.30
+    sudo wget --no-check-certificate -qNP /usr/lib https://raw.githubusercontent.com/$GITHUB_REPO_PATH/libgdalalljni.so.30.0.3
   fi
 fi
 
