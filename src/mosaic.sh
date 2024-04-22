@@ -17,17 +17,15 @@
 # TEMPLATE-BASED REPLACEMENT
 # - can also be manually specified
 FUSE_DIR='__FUSE_DIR__'
-GITHUB_VERSION=0.4.1
+GITHUB_VERSION='0.4.1'
 MOSAIC_PIP_VERSION='0.4.1'
+GDAL_VERSION='3.4.1'     # <- ubuntugis is 3.4.3
 
 # CONDITIONAL LOGIC
-WITH_MOSAIC=1    # <- pip install mosaic?
-WITH_GDAL=1      # <- install gdal?
-WITH_UBUNTUGIS=1 # <- use ubuntugis ppa?
-WITH_FUSE_SO=0   # <- use fuse dir shared objects (vs wget) 
-
-# SPECIFIED VERSIONS 
-GDAL_VERSION=3.4.1     # <- ubuntugis is 3.4.3
+WITH_MOSAIC=1    # <- pip install mosaic?  mosaic
+WITH_GDAL=1      # <- install gdal?  mosaic.read
+WITH_UBUNTUGIS=0 # <- use ubuntugis ppa?  no this installs a different version
+WITH_FUSE_SO=0   # <- use fuse dir shared objects (vs wget)?  no they can just be downloaded
 
 # - optional: install GDAL
 if [ $WITH_GDAL == 1 ]
