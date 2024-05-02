@@ -7,7 +7,7 @@ bash $DIR/Miniconda3-latest-Linux-x86_64.sh -bufp $DIR
 
 $DIR/bin/conda config --set ssl_verify false
 $DIR/bin/conda update -y --all
-$DIR/bin/conda install -y -c conda-forge libgdal-arrow-parquet gdal
+$DIR/bin/conda install -y -c conda-forge libgdal-arrow-parquet
 
 # ogr settings
 export TMPDIR=/tmp
