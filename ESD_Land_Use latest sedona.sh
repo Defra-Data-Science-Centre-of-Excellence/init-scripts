@@ -6,7 +6,7 @@ URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/es
 wget $URL/rootcert.sh -O- | bash -ex
 wget $URL/update.sh -O- | bash -ex
 wget $URL/c_dependencies.sh -O- | bash -ex
-wget $URL/sedona_151.sh -O- | bash -ex
+wget $URL/sedona_160.sh -O- | bash -ex
 
 pip install /Workspace/Shared/python_libraries/sds_dash_download-0.1.0-py3-none-any.whl /Workspace/Shared/python_libraries/sds_land_use_model-0.1.0-py3-none-any.whl
 
