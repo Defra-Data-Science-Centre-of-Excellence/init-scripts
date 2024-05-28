@@ -7,6 +7,7 @@ wget $URL/rootcerts.sh -O- | bash
 wget $URL/update.sh -O- | bash 
 wget $URL/c_dependencies.sh -O- | bash 
 wget $URL/sedona_150.sh -O- | bash 
+#wget $URL/sedona_151.sh -O- | bash 
 
 pip install /Workspace/Shared/python_libraries/sds_dash_download-0.1.0-py3-none-any.whl
 
