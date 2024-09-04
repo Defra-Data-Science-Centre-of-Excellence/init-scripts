@@ -1,4 +1,4 @@
-
+#!/bin/bash
 JUPYTER_SERVICE="""[Unit]
 Description=JupyterHub
 After=syslog.target network.target

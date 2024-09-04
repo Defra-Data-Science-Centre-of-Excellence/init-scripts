@@ -1,8 +1,6 @@
 #!/bin/bash
-RAW_FILE="/dbfs/databricks/scripts/cscrootcert.crt"
-BUNDLE_FILE="/usr/local/share/ca-certificates/myca.crt"
-
-cp $RAW_FILE $BUNDLE_FILE
+# Copy defined file, or use default.
+cp ${CERT_PATH:-"/dbfs/databricks/scripts/cscrootcerts.crt"} "/usr/local/share/ca-certificates/myca.crt"
 
 # Rest is taken from https://kb.databricks.com/python/import-custom-ca-cert
 update-ca-certificates

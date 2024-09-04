@@ -1,3 +1,4 @@
+#!/bin/bash
 SHINY_CONF='''
 # Instruct Shiny Server to run applications as the user "shiny"
 run_as shiny;
