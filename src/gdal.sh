@@ -17,3 +17,6 @@ $DIR/bin/conda install -y -c conda-forge libgdal-arrow-parquet
 export TMPDIR=/tmp
 export PROJ_LIB=/databricks/miniconda/share/proj
 export OGR_GEOMETRY_ACCEPT_UNCLOSED_RING=NO
+echo TMPDIR=$TMPDIR | tee -a /etc/environment
+echo OGR_GEOMETRY_ACCEPT_UNCLOSED_RING=$OGR_GEOMETRY_ACCEPT_UNCLOSED_RING | tee -a /etc/environment
+echo PROJ_LIB=$PROJ_LIB | tee -a /etc/environment
