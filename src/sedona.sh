@@ -11,4 +11,4 @@ SEDONA="1.6.1"
 wget --no-check-certificate -qNP $DIR "https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/$SEDONA-$GEOTOOLS/geotools-wrapper-$SEDONA-$GEOTOOLS.jar"
 wget --no-check-certificate -qNP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-${SPARK}_${SCALA}/$SEDONA/sedona-spark-shaded-${SPARK}_${SCALA}-$SEDONA.jar"
 wget --no-check-certificate -qNP $DIR "https://repo1.maven.org/maven2/org/apache/sedona/sedona-viz-${SPARK}_${SCALA}/$SEDONA/sedona-viz-${SPARK}_${SCALA}-$SEDONA.jar"
-pip install apache-sedona==$SEDONA keplergl==0.3.2 pydeck==0.8.0 geopandas==0.11.1
+pip install apache-sedona==$SEDONA keplergl pydeck geopandas
