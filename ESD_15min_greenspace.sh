@@ -15,7 +15,7 @@ pip install /Workspace/Shared/python_libraries/sds_dash_download-0.1.0-py3-none-
 pip install pyogrio==0.7.2
 pip install keplergl==0.3.2
 pip install pydeck==0.8.0
-pip install geopandas==0.14.2
+pip install geopandas==0.14.4
 pip install pandana==0.7
 pip install shapely==2.0.2
 pip install matplotlib==3.8.3
