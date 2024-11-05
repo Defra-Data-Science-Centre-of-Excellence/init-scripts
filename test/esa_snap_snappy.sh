@@ -18,10 +18,17 @@ while [ ! -f "$INSTALLER_DBFS_PATH" ]; do
 done
 
 cp "$INSTALLER_DBFS_PATH" "$INSTALLER_TMP_PATH"
+if [ $? -ne 0 ]; then
+  echo "Error: Failed to copy installer script to $INSTALLER_TMP_PATH."
+  exit 1
+fi
 
 # Detect the Python executable dynamically
 PYTHON_EXEC=$(which python3)
-[ -z "$PYTHON_EXEC" ] && exit 1
+if [ -z "$PYTHON_EXEC" ]; then
+  echo "Error: Failed to detect the Python executable."
+  exit 1
+fi
 
 # Run the installer with input redirection
 "$INSTALLER_TMP_PATH" -c -q --skipBundledJre <<EOF
