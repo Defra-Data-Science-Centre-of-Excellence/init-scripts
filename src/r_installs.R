@@ -1,3 +1,4 @@
+options(Ncpus = 6)
 install.packages(c(
     "arrow",
     "BH",
