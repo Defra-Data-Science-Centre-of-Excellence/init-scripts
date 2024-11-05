@@ -1,4 +1,3 @@
-# Databricks notebook source
 #!/bin/bash
 
 # Copy the SNAP installer to the temporary directory
@@ -21,4 +20,3 @@ EOF
 
 # Copy the SNAP Python module to the Python site-packages directory
 cp -r /root/.snap/snap-python/esa_snappy/ /local_disk0/.ephemeral_nfs/cluster_libraries/python/lib/python3.9/site-packages
-
