@@ -1,4 +1,4 @@
-options(Ncpus = 6)
+options(Ncpus = parallel::detectCores() - 2)
 install.packages(c(
     "arrow",
     "BH",
