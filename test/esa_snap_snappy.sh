@@ -3,6 +3,7 @@
 INSTALLER_DBFS_PATH="/dbfs/mnt/lab/unrestricted/admin/apps/esa_snap_sentinel_linux_10_0_0.sh"
 INSTALLER_TMP_PATH="/tmp/esa_snap_sentinel_linux_10_0_0.sh"
 SNAPPY_CONFIG_FILE="/opt/esa-snap/bin/snappy-conf"
+SNAPPY_MODULE="/root/.snap/snap-python/esa_snappy"
 
 # Wait until mount is accessible
 # Trying to get the install script from the lab zone fails without this wait process, possibly because
@@ -43,7 +44,7 @@ $PYTHON_PATH
 y
 EOF
 
-# Try the wait loop on the snappy config before running
+# Try the wait loop on the snappy config file before running
 TIMEOUT=120
 WAIT_INTERVAL=5
 ELAPSED=0
@@ -57,5 +58,17 @@ done
 # Configure SNAP for the detected Python version
 $SNAPPY_CONFIG_FILE $PYTHON_EXEC
 
+# Try the wait loop on the esa snappy module before copying it to site-packages
+TIMEOUT=120
+WAIT_INTERVAL=5
+ELAPSED=0
+while [ ! -f "$SNAPPY_MODULE" ]; do
+  if [ $ELAPSED -ge $TIMEOUT ]; then
+    exit 1
+  fi
+  sleep $WAIT_INTERVAL
+  ELAPSED=$((ELAPSED + WAIT_INTERVAL))
+done
+
 # Copy the SNAP Python module
-cp -r /root/.snap/snap-python/esa_snappy /local_disk0/.ephemeral_nfs/cluster_libraries/python/lib/python3.9/site-packages/
+cp -r $SNAPPY_MODULE /local_disk0/.ephemeral_nfs/cluster_libraries/python/lib/python3.9/site-packages/
