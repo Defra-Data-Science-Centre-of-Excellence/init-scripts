@@ -2,6 +2,7 @@
 
 INSTALLER_DBFS_PATH="/dbfs/mnt/lab/unrestricted/admin/apps/esa_snap_sentinel_linux_10_0_0.sh"
 INSTALLER_TMP_PATH="/tmp/esa_snap_sentinel_linux_10_0_0.sh"
+SNAPPY_CONFIG_FILE="/opt/esa-snap/bin/snappy-conf"
 
 # Wait until mount is accessible
 # Trying to get the install script from the lab zone fails without this wait process, possibly because
@@ -32,18 +33,29 @@ fi
 
 # Run the installer with input redirection
 "$INSTALLER_TMP_PATH" -c -q --skipBundledJre <<EOF
-o                          # OK to continue
-1                          # Select installation type
-$SNAP_INSTALL_DIR          # Specify installation directory
-2,3,4                      # Select components
-n                          # No symlinks
-y                          # Confirm installation
-$PYTHON_PATH               # Specify Python executable
-y                          # Configure for Python
+o
+1
+$SNAP_INSTALL_DIR
+2,3,4
+n
+y
+$PYTHON_PATH
+y
 EOF
 
+# Try the wait loop on the snappy config before running
+TIMEOUT=120
+WAIT_INTERVAL=5
+ELAPSED=0
+while [ ! -f "$SNAPPY_CONFIG_FILE" ]; do
+  if [ $ELAPSED -ge $TIMEOUT ]; then
+    exit 1
+  fi
+  sleep $WAIT_INTERVAL
+  ELAPSED=$((ELAPSED + WAIT_INTERVAL))
+done
 # Configure SNAP for the detected Python version
-/opt/esa-snap/bin/snappy-conf $PYTHON_EXEC
+$SNAPPY_CONFIG_FILE $PYTHON_EXEC
 
 # Copy the SNAP Python module
 cp -r /root/.snap/snap-python/esa_snappy /local_disk0/.ephemeral_nfs/cluster_libraries/python/lib/python3.9/site-packages/
