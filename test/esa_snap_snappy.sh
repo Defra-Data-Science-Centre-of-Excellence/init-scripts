@@ -31,6 +31,11 @@ if [ -z "$PYTHON_EXEC" ]; then
   echo "Error: Failed to detect the Python executable."
   exit 1
 fi
+echo "Excellent! We found the Python executable at $PYTHON_EXEC"
+
+# Construct the site-packages path
+PYTHON_SITE_PACKAGES="${PYTHON_EXEC%/bin/python3}/lib/python${PYTHON_VERSION}/site-packages"
+echo "The Python site-packages directory is located at: $PYTHON_SITE_PACKAGES"
 
 # Run the installer with input redirection
 "$INSTALLER_TMP_PATH" -c -q --skipBundledJre <<EOF
@@ -40,11 +45,11 @@ $SNAP_INSTALL_DIR
 2,3,4
 n
 y
-$PYTHON_PATH
+$PYTHON_EXEC
 y
 EOF
+echo "The SNAP installation ought to have completed. Now we wait for $SNAPPY_CONFIG_FILE"
 
-# Try the wait loop on the snappy config file before running
 TIMEOUT=120
 WAIT_INTERVAL=5
 ELAPSED=0
@@ -55,8 +60,14 @@ while [ ! -f "$SNAPPY_CONFIG_FILE" ]; do
   sleep $WAIT_INTERVAL
   ELAPSED=$((ELAPSED + WAIT_INTERVAL))
 done
-# Configure SNAP for the detected Python version
-$SNAPPY_CONFIG_FILE $PYTHON_EXEC
+echo "The wait loop has completed and found $SNAPPY_CONFIG_FILE"
+
+# Configure SNAP for Python
+"$SNAPPY_CONFIG_FILE" "$PYTHON_EXEC"
+if [ $? -ne 0 ]; then
+  echo "Error: Failed to configure SNAP with Python."
+  exit 1
+fi
 
 # Try the wait loop on the esa snappy module before copying it to site-packages
 TIMEOUT=120
@@ -71,4 +82,4 @@ while [ ! -f "$SNAPPY_MODULE" ]; do
 done
 
 # Copy the SNAP Python module
-cp -r $SNAPPY_MODULE /local_disk0/.ephemeral_nfs/cluster_libraries/python/lib/python3.9/site-packages/
+cp -r "$SNAPPY_MODULE" "$PYTHON_PACKAGES"
