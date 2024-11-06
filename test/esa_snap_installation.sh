@@ -48,38 +48,3 @@ y
 $PYTHON_EXEC
 y
 EOF
-echo "The SNAP installation ought to have completed. Now we wait for $SNAPPY_CONFIG_FILE"
-
-TIMEOUT=120
-WAIT_INTERVAL=5
-ELAPSED=0
-while [ ! -f "$SNAPPY_CONFIG_FILE" ]; do
-  if [ $ELAPSED -ge $TIMEOUT ]; then
-    exit 1
-  fi
-  sleep $WAIT_INTERVAL
-  ELAPSED=$((ELAPSED + WAIT_INTERVAL))
-done
-echo "The wait loop has completed and found $SNAPPY_CONFIG_FILE"
-
-# Configure SNAP for Python
-"$SNAPPY_CONFIG_FILE" "$PYTHON_EXEC"
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to configure SNAP with Python."
-  exit 1
-fi
-
-# Try the wait loop on the esa snappy module before copying it to site-packages
-TIMEOUT=120
-WAIT_INTERVAL=5
-ELAPSED=0
-while [ ! -f "$SNAPPY_MODULE" ]; do
-  if [ $ELAPSED -ge $TIMEOUT ]; then
-    exit 1
-  fi
-  sleep $WAIT_INTERVAL
-  ELAPSED=$((ELAPSED + WAIT_INTERVAL))
-done
-
-# Copy the SNAP Python module
-cp -r "$SNAPPY_MODULE" "$PYTHON_PACKAGES"
