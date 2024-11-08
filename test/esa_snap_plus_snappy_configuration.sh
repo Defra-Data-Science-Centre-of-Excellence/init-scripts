@@ -2,6 +2,7 @@
 
 INSTALLER_DBFS_PATH="/dbfs/mnt/lab/unrestricted/admin/apps/esa_snap_sentinel_linux_10_0_0.sh"
 INSTALLER_TMP_PATH="/tmp/esa_snap_sentinel_linux_10_0_0.sh"
+SNAP_INSTALL_DIR="/opt/esa-snap"
 SNAPPY_CONFIG_FILE="/opt/esa-snap/bin/snappy-conf"
 SNAPPY_MODULE="/root/.snap/snap-python/esa_snappy"
 

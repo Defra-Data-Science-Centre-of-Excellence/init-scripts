@@ -5,7 +5,7 @@ INSTALLER_TMP_PATH="/tmp/esa_snap_sentinel_linux_10_0_0.sh"
 SNAP_INSTALL_DIR="/opt/esa-snap"
 
 # Wait until mount is accessible
-# Trying to get the install script from the lab zone fails without this wait process, possibly because
+# Trying to get the install script from the lab zone fails without this wait process fails, possibly because
 # the driver node needs a few seconds to have its coffee or something.
 TIMEOUT=120
 WAIT_INTERVAL=5
