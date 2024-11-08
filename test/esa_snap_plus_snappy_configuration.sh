@@ -19,6 +19,9 @@ while [ ! -f "$INSTALLER_DBFS_PATH" ]; do
   ELAPSED=$((ELAPSED + WAIT_INTERVAL))
 done
 
+# Copying the installer file from the mounted Lab zone to local storage on the driver node. 
+# I don't know if this is completely necessary, but it's a big file and running the install 
+# straight from Lab might be less reliable. 
 cp "$INSTALLER_DBFS_PATH" "$INSTALLER_TMP_PATH"
 if [ $? -ne 0 ]; then
   echo "Error: Failed to copy installer script to $INSTALLER_TMP_PATH."
@@ -33,8 +36,11 @@ if [ -z "$PYTHON_EXEC" ]; then
 fi
 echo "Excellent! We found the Python executable at $PYTHON_EXEC"
 
+# Get the Python version dynamically
+PYTHON_VERSION="$(python3 -c "import sys; print('python{}.{}'.format(sys.version_info.major, sys.version_info.minor))")"
+
 # Construct the site-packages path
-PYTHON_SITE_PACKAGES="${PYTHON_EXEC%/bin/python3}/lib/python${PYTHON_VERSION}/site-packages"
+PYTHON_SITE_PACKAGES="${PYTHON_EXEC%/bin/python3}/lib/$PYTHON_VERSION/site-packages"
 echo "The Python site-packages directory is located at: $PYTHON_SITE_PACKAGES"
 
 # Run the installer with input redirection
@@ -64,7 +70,6 @@ echo "The wait loop has completed and found $SNAPPY_CONFIG_FILE"
 
 # Configure SNAP for Python
 echo "Attempting to configure SNAP with Python using $SNAPPY_CONFIG_FILE and $PYTHON_EXEC"
-echo "Starting snappy-conf..."
 "$SNAPPY_CONFIG_FILE" "$PYTHON_EXEC"
 EXIT_CODE=$?
 if [ $EXIT_CODE -ne 0 ]; then

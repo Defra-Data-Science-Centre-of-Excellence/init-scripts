@@ -28,20 +28,12 @@ if [ $? -ne 0 ]; then
 fi
 
 # Detect the Python executable dynamically
-# The Python exec seems to be all over the place.. watch the log statements from this install
-# and then run `which python3` in a notebook and see...
 PYTHON_EXEC=$(which python3)
 if [ -z "$PYTHON_EXEC" ]; then
   echo "Error: Failed to detect the Python executable."
   exit 1
 fi
 echo "Excellent! We found the Python executable at $PYTHON_EXEC"
-
-# Construct the site-packages path. Because ^above^ this is also all over the place,
-# which is why I haven't been able to figure out the esa-snappy configuration step in 
-# this init script.
-PYTHON_SITE_PACKAGES="${PYTHON_EXEC%/bin/python3}/lib/python${PYTHON_VERSION}/site-packages"
-echo "The Python site-packages directory is located at: $PYTHON_SITE_PACKAGES"
 
 # Run the installer with input redirection
 "$INSTALLER_TMP_PATH" -c -q --skipBundledJre <<EOF
