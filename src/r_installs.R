@@ -45,7 +45,7 @@ install.packages(c(
     "shinyjs",
     "snakecase",
     "srvyr",
-    "stringr"
+    "stringr",
     "svglite",
     "tidyr",
     "tictoc",
