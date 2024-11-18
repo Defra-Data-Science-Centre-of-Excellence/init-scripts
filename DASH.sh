@@ -5,7 +5,7 @@ echo $DB_CLUSTER_NAME
 # Optional cscrootcerts.crt path
 CERT_PATH=
 
-URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src
+URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/r-kable-ab/src
 wget $URL/rootcert.sh -O- | bash -ex
 wget $URL/update.sh -O- | bash  -ex
 wget $URL/base_libs.sh -O- | bash  -ex

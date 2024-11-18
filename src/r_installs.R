@@ -19,6 +19,7 @@ install.packages(c(
     "gratia",
     "here",
     "janitor",
+    "kableExtra"
     "lattice",
     "lazyeval",
     "leaflet",
@@ -44,7 +45,8 @@ install.packages(c(
     "shinyjs",
     "snakecase",
     "srvyr",
-    "stringr",
+    "stringr"
+    "svglite",
     "tidyr",
     "tictoc",
     "tmap",
