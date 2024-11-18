@@ -19,7 +19,7 @@ install.packages(c(
     "gratia",
     "here",
     "janitor",
-    "kableExtra"
+    "kableExtra",
     "lattice",
     "lazyeval",
     "leaflet",
