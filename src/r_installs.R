@@ -72,5 +72,6 @@ install.packages(c(
     "rnaturalearth",
     "vegan",
     "visdat",
+    "connectapi",
     "gllvm" 
 ), repos="https://cloud.r-project.org")
