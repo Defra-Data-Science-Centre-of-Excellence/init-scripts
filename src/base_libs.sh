@@ -28,7 +28,8 @@ pip install \
   "pandas[all]<2" \
   "ruff<0.2" pip-tools pytest \
   pyogrio spatialite rtree pyproj geopandas geocube \
-  geodatasets contextily folium mapclassify
+  geodatasets contextily folium mapclassify openpyxl \
+  Office365-REST-Python-Client
 
 # Additional configs
 echo 'message(r"(
