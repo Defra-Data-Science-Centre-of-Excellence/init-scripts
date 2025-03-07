@@ -1,5 +1,5 @@
 options(Ncpus = parallel::detectCores() - 2)
-install.packages('Rcpp')
+install.packages("Rcpp", repos="https://cloud.r-project.org")
 install.packages(c(
     "arrow",
     "BH",
