@@ -3,7 +3,7 @@ set -ex
 echo $DB_CLUSTER_NAME
 
 # Optional cscrootcerts.crt path
-CERT_PATH=
+export CERT_PATH="/Volumes/prd_dash_config/common/init_scripts/src/cscrootcert.crt"
 
 URL=https://raw.githubusercontent.com/Defra-Data-Science-Centre-of-Excellence/init-scripts/main/src
 wget $URL/rootcert.sh -O- | bash -ex
