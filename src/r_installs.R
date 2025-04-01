@@ -1,4 +1,5 @@
 options(Ncpus = parallel::detectCores() - 2)
+install.packages("Rcpp", repos="https://cloud.r-project.org"))
 install.packages(c(
     "arrow",
     "BH",
@@ -73,5 +74,6 @@ install.packages(c(
     "vegan",
     "visdat",
     "connectapi",
-    "gllvm" 
+    "gllvm",
+    "brickster"
 ), repos="https://cloud.r-project.org")
