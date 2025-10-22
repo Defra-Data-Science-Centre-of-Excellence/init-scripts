@@ -4,26 +4,21 @@
 
 set -euo pipefail
 
-# Try latest first, then a known prior version that includes the uber JAR
-VERSIONS=("5.1.3" "5.1.2")
-BASE_URL="https://repo1.maven.org/maven2/io/github/spannm/ucanaccess"
-TARGET_DIR="/databricks/jars"
+set -euo pipefail
+VERSIONS=("5.0.1")
+BASE_URL=https://repo1.maven.org/maven2/io/github/spannm/ucanaccess
+TARGET_DIR=/databricks/jars
+mkdir -p "$TARGET_DIR"
 
-mkdir -p "${TARGET_DIR}"
-
-downloaded=""
 for ver in "${VERSIONS[@]}"; do
   jar="ucanaccess-${ver}-uber.jar"
   url="${BASE_URL}/${ver}/${jar}"
   echo "Attempting to download ${url} ..."
   if wget --quiet --timeout=10 -O "${TARGET_DIR}/${jar}" "${url}"; then
-    downloaded="${TARGET_DIR}/${jar}"
-    # Create/refresh a stable symlink for convenience
-    ln -sf "${downloaded}" "${TARGET_DIR}/ucanaccess-uber.jar"
+    ln -sf "${TARGET_DIR}/${jar}" "${TARGET_DIR}/ucanaccess-uber.jar"
     echo "Downloaded ${jar} to ${TARGET_DIR}"
+    chmod 0644 "${TARGET_DIR}/${jar}" "${TARGET_DIR}/ucanaccess-uber.jar"
     break
-  else
-    echo "Not found at ${url}; trying next version..."
   fi
 done
 if [[ -z "${downloaded}" ]]; then
