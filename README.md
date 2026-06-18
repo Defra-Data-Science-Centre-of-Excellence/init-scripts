@@ -1,8 +1,8 @@
 ---
 title: init-scripts
 authors:
-  - "@aw-west, Andrew.West@defra.gov.uk"
-  - "@tomkdefra, Tom.Kirkpatrick@defra.gov.uk"
+  - "Owner: @aw-west, Andrew.West@defra.gov.uk"
+  - "Developer: @tomkdefra, Tom.Kirkpatrick@defra.gov.uk"
 ---
 
 # Init Scripts
