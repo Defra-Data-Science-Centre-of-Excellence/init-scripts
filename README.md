@@ -1,8 +1,9 @@
 ---
 title: init-scripts
 authors:
-  - "Owner: @aw-west, Andrew.West@defra.gov.uk"
-  - "Developer: @tomkdefra, Tom.Kirkpatrick@defra.gov.uk"
+  - "@aw-west, Andrew.West@defra.gov.uk"
+  - "@tomkdefra, Tom.Kirkpatrick@defra.gov.uk"
+  - "dashplatformsupport@defra.gov.uk"
 ---
 
 # Init Scripts
