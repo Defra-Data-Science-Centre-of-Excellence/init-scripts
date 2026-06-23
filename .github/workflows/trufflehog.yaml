@@ -14,4 +14,8 @@ jobs:
     - name: Secret Scanning
       uses: trufflesecurity/trufflehog@main
       with:
-        extra_args: --results=verified,unknown
+        extra_args: |
+            --since-commit origin/${{ github.base_ref }}
+            --branch ${{ github.head_ref }}
+            --results=verified,unknown
+            --fail
