@@ -38,6 +38,7 @@ install.packages(c(
     "reticulate",
     "rlang",
     "RPostgres",
+    "sparklyr",
     "rsconnect",
     "rstudioapi",
     "sf",
