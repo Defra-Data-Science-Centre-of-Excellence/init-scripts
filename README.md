@@ -1,4 +1,13 @@
-# init-scripts
+---
+title: init-scripts
+authors:
+  - "dashplatformsupport@defra.gov.uk"
+  - "@aw-west, Andrew.West@defra.gov.uk"
+  - "@tomkdefra, Tom.Kirkpatrick@defra.gov.uk"
+---
+
+# Init Scripts
+
 Short shell scripts for initialising data science Linux environments.
 
 
